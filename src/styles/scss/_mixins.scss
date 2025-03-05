@@ -1,0 +1,27 @@
+@mixin bp-up($bp) {
+  $max: map-get($grid-bps, $bp);
+
+  @media only screen and (min-width: #{$max}) {
+    @content;
+  }
+}
+
+@mixin bp-down($bp) {
+  $max: map-get($grid-bps, $bp) - 1;
+
+  @media (max-width: $max) {
+    @content;
+  }
+}
+
+@mixin bp($bp) {
+  $i: index($bp-keys, $bp);
+  $next: nth($bp-keys, $i + 1);
+
+  $min: map-get($grid-bps, $bp);
+  $max: map-get($grid-bps, $next) - 1;
+
+  @media (min-width: $min) and (max-width: $max) {
+    @content;
+  }
+}

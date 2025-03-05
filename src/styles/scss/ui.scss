@@ -1,0 +1,99 @@
+.data-table {
+  width: 100%;
+  color: #BEC2D1;
+
+  th {
+    font-weight: 500
+  }
+
+  th, td {
+    padding: 1em;
+    text-align: left;
+
+    &:last-child {
+      text-align: right;
+    }
+  }
+
+  thead {
+    border-bottom: 1px solid #20212D;
+  }
+
+  tbody {
+    tr:nth-child(even) {
+      background: rgba(25, 26, 34, 0.53);
+    }
+  }
+}
+
+.data-table-wrap {
+  border-radius: 1.125rem;
+  border: 1px solid #20212D;
+  overflow: hidden;
+}
+
+.dot {
+  font-size: 12px;
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+}
+
+
+.btn {
+  height: 3.25em;
+  padding: 0 3.38em;
+
+  &[disabled] {
+    opacity: 0.3
+  }
+}
+
+.btn-primary-ol {
+  background: linear-gradient(180deg, rgba(255, 168, 67, 0.05) 0%, rgba(232, 142, 38, 0.05) 100%)
+}
+
+.btn-clear {
+  background: none;
+  padding: 0 1em;
+}
+
+.btn-sm {
+  font-size: 0.875rem;
+  height: 1.875rem;
+  border-radius: 1.875rem
+}
+
+
+.svg-icon {
+  height: 1em;
+  width: auto;
+  font-size: 1rem;
+}
+
+.card {
+  background: linear-gradient(120deg, #292B31 20.34%, #181921 91.82%);
+  box-shadow: 0px 0px 22px 0px #131418;
+}
+
+.card-header {
+  height: 4.8rem;
+  background: linear-gradient(91deg, #333440 2.71%, rgba(71, 73, 95, 0.00) 98.31%);
+  color: #fff
+}
+
+.modal-dialog {
+  width: 100%;
+  
+  @include bp-up(lg) {
+    margin-top: 4vh;
+  }
+}
+
+.modal-dialog-sm {
+  max-width: 440px;
+}
+
+.modal-dialog-md {
+  max-width: 500px;
+}

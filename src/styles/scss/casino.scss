@@ -1,0 +1,5 @@
+.casino-grid {
+  @include bp-up(lg) {
+    grid-template-columns: 4fr 6fr;
+  }
+}

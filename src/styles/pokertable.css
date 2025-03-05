@@ -1,0 +1,4583 @@
+.table10players {
+    .pokerContainer-seat1 {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+        gap: 6px 0px;
+        grid-template-areas:
+            ". player5 player6 player7 ."
+            "player4 . . . player8"
+            ". communityCards communityCards communityCards ."
+            "player3 communityCards communityCards communityCards player9"
+            ". player2 player1 player10 .";
+    }
+
+    .pokerContainer-seat1 .player10-pot,
+    .pokerContainer-seat1 .player1-pot,
+    .pokerContainer-seat1 .player2-pot {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        left: 0;
+        right: 0;
+        top: -150%;
+    }
+
+    .pokerContainer-seat1 .player3-pot,
+    .pokerContainer-seat1 .player4-pot {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        right: -30%;
+        top: 0;
+        bottom: 0;
+    }
+
+    .pokerContainer-seat1 .player5-pot,
+    .pokerContainer-seat1 .player6-pot,
+    .pokerContainer-seat1 .player7-pot {
+        position: absolute;
+        bottom: -100%;
+        right: 0px;
+        left: 0px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pokerContainer-seat1 .player8-pot,
+    .pokerContainer-seat1 .player9-pot {
+        position: absolute;
+        right: auto;
+        top: 0px;
+        bottom: 0px;
+        display: flex;
+        flex-direction: column;
+        left: -30%;
+    }
+
+
+
+
+
+
+
+    .pokerContainer-seat2 {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+        gap: 6px 0px;
+        grid-template-areas:
+            ". player6 player7 player8 ."
+            "player5 . . . player9"
+            ". communityCards communityCards communityCards ."
+            "player4 communityCards communityCards communityCards player10"
+            ". player3 player2 player1 .";
+    }
+
+    .pokerContainer-seat2 .player1-pot,
+    .pokerContainer-seat2 .player2-pot,
+    .pokerContainer-seat2 .player3-pot {
+        position: absolute;
+        top: -150%;
+        left: 0;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pokerContainer-seat2 .player4-pot,
+    .pokerContainer-seat2 .player5-pot {
+        position: absolute;
+        right: -30%;
+        left: auto;
+        bottom: 0;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pokerContainer-seat2 .player6-pot,
+    .pokerContainer-seat2 .player7-pot,
+    .pokerContainer-seat2 .player8-pot {
+        position: absolute;
+        bottom: -100%;
+        display: flex;
+        flex-direction: column;
+        left: 0;
+        right: 0;
+    }
+
+    .pokerContainer-seat2 .player9-pot,
+    .pokerContainer-seat2 .player10-pot {
+        position: absolute;
+        left: -30%;
+        right: auto;
+        bottom: 0;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+
+    .pokerContainer-seat3 {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+        gap: 6px 0px;
+        grid-template-areas:
+            ". player7 player8 player9 ."
+            "player6 . . . player10"
+            ". communityCards communityCards communityCards ."
+            "player5 communityCards communityCards communityCards player1"
+            ". player4 player3 player2 .";
+    }
+
+    .pokerContainer-seat3 .player2-pot,
+    .pokerContainer-seat3 .player3-pot,
+    .pokerContainer-seat3 .player4-pot {
+        position: absolute;
+        top: -150%;
+        left: 0;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pokerContainer-seat3 .player5-pot,
+    .pokerContainer-seat3 .player6-pot {
+        position: absolute;
+        right: -30%;
+        left: auto;
+        bottom: 0;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pokerContainer-seat3 .player7-pot,
+    .pokerContainer-seat3 .player8-pot,
+    .pokerContainer-seat3 .player9-pot {
+        position: absolute;
+        bottom: -100%;
+        display: flex;
+        flex-direction: column;
+        left: 0;
+        right: 0;
+    }
+
+    .pokerContainer-seat3 .player10-pot,
+    .pokerContainer-seat3 .player1-pot {
+        position: absolute;
+        left: -30%;
+        right: auto;
+        bottom: 0;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+
+
+
+    .pokerContainer-seat4 {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+        gap: 6px 0px;
+        grid-template-areas:
+            ". player8 player9 player10 ."
+            "player7 . . . player1"
+            ". communityCards communityCards communityCards ."
+            "player6 communityCards communityCards communityCards player2"
+            ". player5 player4 player3 .";
+    }
+
+    .pokerContainer-seat4 .player3-pot,
+    .pokerContainer-seat4 .player4-pot,
+    .pokerContainer-seat4 .player5-pot {
+        position: absolute;
+        top: -150%;
+        left: 0;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pokerContainer-seat4 .player6-pot,
+    .pokerContainer-seat4 .player7-pot {
+        position: absolute;
+        right: -30%;
+        left: auto;
+        bottom: 0;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pokerContainer-seat4 .player8-pot,
+    .pokerContainer-seat4 .player9-pot,
+    .pokerContainer-seat4 .player10-pot {
+        position: absolute;
+        bottom: -100%;
+        display: flex;
+        flex-direction: column;
+        left: 0;
+        right: 0;
+    }
+
+    .pokerContainer-seat4 .player1-pot,
+    .pokerContainer-seat4 .player2-pot {
+        position: absolute;
+        left: -30%;
+        right: auto;
+        bottom: 0;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+
+    .pokerContainer-seat5 {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+        gap: 6px 0px;
+        grid-template-areas:
+            ". player9 player10 player1 ."
+            "player8 . . . player2"
+            ". communityCards communityCards communityCards ."
+            "player7 communityCards communityCards communityCards player3"
+            ". player6 player5 player4 .";
+    }
+
+    .pokerContainer-seat5 .player4-pot,
+    .pokerContainer-seat5 .player5-pot,
+    .pokerContainer-seat5 .player6-pot {
+        position: absolute;
+        top: -150%;
+        left: 0;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pokerContainer-seat5 .player7-pot,
+    .pokerContainer-seat5 .player8-pot {
+        position: absolute;
+        right: -30%;
+        left: auto;
+        bottom: 0;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pokerContainer-seat5 .player9-pot,
+    .pokerContainer-seat5 .player10-pot,
+    .pokerContainer-seat5 .player1-pot {
+        position: absolute;
+        bottom: -100%;
+        display: flex;
+        flex-direction: column;
+        left: 0;
+        right: 0;
+    }
+
+    .pokerContainer-seat5 .player2-pot,
+    .pokerContainer-seat5 .player3-pot {
+        position: absolute;
+        left: -30%;
+        right: auto;
+        bottom: 0;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+
+    .pokerContainer-seat6 {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+        gap: 6px 0px;
+        grid-template-areas:
+            ". player10 player1 player2 ."
+            "player9 . . . player3"
+            ". communityCards communityCards communityCards ."
+            "player8 communityCards communityCards communityCards player4"
+            ". player7 player6 player5 .";
+    }
+
+    .pokerContainer-seat6 .player5-pot,
+    .pokerContainer-seat6 .player6-pot,
+    .pokerContainer-seat6 .player7-pot {
+        position: absolute;
+        top: -150%;
+        left: 0;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pokerContainer-seat6 .player8-pot,
+    .pokerContainer-seat6 .player9-pot {
+        position: absolute;
+        right: -30%;
+        left: auto;
+        bottom: 0;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pokerContainer-seat6 .player10-pot,
+    .pokerContainer-seat6 .player1-pot,
+    .pokerContainer-seat6 .player2-pot {
+        position: absolute;
+        bottom: -100%;
+        display: flex;
+        flex-direction: column;
+        left: 0;
+        right: 0;
+    }
+
+    .pokerContainer-seat6 .player3-pot,
+    .pokerContainer-seat6 .player4-pot {
+        position: absolute;
+        left: -30%;
+        right: auto;
+        bottom: 0;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+
+
+    .pokerContainer-seat7 {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+        gap: 6px 0px;
+        grid-template-areas:
+            ". player1 player2 player3 ."
+            "player10 . . . player4"
+            ". communityCards communityCards communityCards ."
+            "player9 communityCards communityCards communityCards player5"
+            ". player8 player7 player6 .";
+    }
+
+    .pokerContainer-seat7 .player6-pot,
+    .pokerContainer-seat7 .player7-pot,
+    .pokerContainer-seat7 .player8-pot {
+        position: absolute;
+        top: -150%;
+        left: 0;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pokerContainer-seat7 .player9-pot,
+    .pokerContainer-seat7 .player10-pot {
+        position: absolute;
+        right: -30%;
+        left: auto;
+        bottom: 0;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pokerContainer-seat7 .player1-pot,
+    .pokerContainer-seat7 .player2-pot,
+    .pokerContainer-seat7 .player3-pot {
+        position: absolute;
+        bottom: -100%;
+        display: flex;
+        flex-direction: column;
+        left: 0;
+        right: 0;
+    }
+
+    .pokerContainer-seat7 .player4-pot,
+    .pokerContainer-seat7 .player5-pot {
+        position: absolute;
+        left: -30%;
+        right: auto;
+        bottom: 0;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+
+
+    .pokerContainer-seat8 {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+        gap: 6px 0px;
+        grid-template-areas:
+            ". player2 player3 player4 ."
+            "player1 . . . player5"
+            ". communityCards communityCards communityCards ."
+            "player10 communityCards communityCards communityCards player6"
+            ". player9 player8 player7 .";
+    }
+
+    .pokerContainer-seat8 .player7-pot,
+    .pokerContainer-seat8 .player8-pot,
+    .pokerContainer-seat8 .player9-pot {
+        position: absolute;
+        top: -150%;
+        left: 0;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pokerContainer-seat8 .player10-pot,
+    .pokerContainer-seat8 .player1-pot {
+        position: absolute;
+        right: -30%;
+        left: auto;
+        bottom: 0;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pokerContainer-seat8 .player2-pot,
+    .pokerContainer-seat8 .player3-pot,
+    .pokerContainer-seat8 .player4-pot {
+        position: absolute;
+        bottom: -100%;
+        display: flex;
+        flex-direction: column;
+        left: 0;
+        right: 0;
+    }
+
+    .pokerContainer-seat8 .player5-pot,
+    .pokerContainer-seat8 .player6-pot {
+        position: absolute;
+        left: -30%;
+        right: auto;
+        bottom: 0;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+
+    .pokerContainer-seat9 {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+        gap: 6px 0px;
+        grid-template-areas:
+            ". player3 player4 player5 ."
+            "player2 . . . player6"
+            ". communityCards communityCards communityCards ."
+            "player1 communityCards communityCards communityCards player7"
+            ". player10 player9 player8 .";
+    }
+
+    .pokerContainer-seat9 .player8-pot,
+    .pokerContainer-seat9 .player9-pot,
+    .pokerContainer-seat9 .player10-pot {
+        position: absolute;
+        top: -150%;
+        left: 0;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pokerContainer-seat9 .player1-pot,
+    .pokerContainer-seat9 .player2-pot {
+        position: absolute;
+        right: -30%;
+        left: auto;
+        bottom: 0;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pokerContainer-seat9 .player3-pot,
+    .pokerContainer-seat9 .player4-pot,
+    .pokerContainer-seat9 .player5-pot {
+        position: absolute;
+        bottom: -100%;
+        display: flex;
+        flex-direction: column;
+        left: 0;
+        right: 0;
+    }
+
+    .pokerContainer-seat9 .player6-pot,
+    .pokerContainer-seat9 .player7-pot {
+        position: absolute;
+        left: -30%;
+        right: auto;
+        bottom: 0;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+
+    }
+
+    .pokerContainer-seat10 {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+        gap: 6px 0px;
+        grid-template-areas:
+            ". player4 player5 player6 ."
+            "player3 . . . player7"
+            ". communityCards communityCards communityCards ."
+            "player2 communityCards communityCards communityCards player8"
+            ". player1 player10 player9 .";
+    }
+
+    .pokerContainer-seat10 .player9-pot,
+    .pokerContainer-seat10 .player10-pot,
+    .pokerContainer-seat10 .player1-pot {
+        position: absolute;
+        top: -150%;
+        left: 0;
+        right: 0;
+        display: flex;
+    }
+
+    /* 2 players on left side */
+    .pokerContainer-seat10 .player2-pot,
+    .pokerContainer-seat10 .player3-pot {
+        position: absolute;
+        right: -30%;
+        left: auto;
+        bottom: 0;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* 3 players on top side */
+    .pokerContainer-seat10 .player4-pot,
+    .pokerContainer-seat10 .player5-pot,
+    .pokerContainer-seat10 .player6-pot {
+        position: absolute;
+        bottom: -100%;
+        display: flex;
+        flex-direction: column;
+        left: 0;
+        right: 0;
+    }
+
+    /* 2 players on right side */
+    .pokerContainer-seat10 .player7-pot,
+    .pokerContainer-seat10 .player8-pot {
+        position: absolute;
+        left: -30%;
+        right: auto;
+        bottom: 0;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* media grid max width */
+    @media (max-width: 1000px) {
+        .pokerContainer-seat1 {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+            gap: 6px 0px;
+            grid-template-areas:
+                ". player5 player6 player7 ."
+                "player4 communityCards communityCards communityCards player8"
+                "player3 communityCards communityCards communityCards player9"
+                "player2 communityCards communityCards communityCards player10"
+                ". . player1 . .";
+        }
+
+        .pokerContainer-seat1 .player1-pot {
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            top: -150%;
+        }
+
+        .pokerContainer-seat1 .player2-pot,
+        .pokerContainer-seat1 .player3-pot,
+        .pokerContainer-seat1 .player4-pot {
+            position: absolute;
+            right: -30%;
+            left: auto;
+            bottom: 0;
+            top: 0;
+            flex-direction: column;
+            display: flex;
+        }
+
+
+        .pokerContainer-seat1 .player5-pot,
+        .pokerContainer-seat1 .player6-pot,
+        .pokerContainer-seat1 .player7-pot {
+            position: absolute;
+            bottom: -100%;
+            flex-direction: column;
+            display: flex;
+        }
+
+        .pokerContainer-seat1 .player8-pot,
+        .pokerContainer-seat1 .player9-pot,
+        .pokerContainer-seat1 .player10-pot {
+            position: absolute;
+            left: -30%;
+            right: auto;
+            bottom: 0;
+            top: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .pokerContainer-seat2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+            gap: 6px 0px;
+            grid-template-areas:
+                ". player6 player7 player8 ."
+                "player5 communityCards communityCards communityCards player9"
+                "player4 communityCards communityCards communityCards player10"
+                "player3 communityCards communityCards communityCards player1"
+                ". . player2 . .";
+        }
+
+        .pokerContainer-seat2 .player2-pot {
+            position: absolute;
+            top: -150%;
+            left: 0;
+            right: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .pokerContainer-seat2 .player3-pot,
+        .pokerContainer-seat2 .player4-pot,
+        .pokerContainer-seat2 .player5-pot {
+            position: absolute;
+            right: -30%;
+            left: auto;
+            bottom: 0;
+            top: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .pokerContainer-seat2 .player6-pot,
+        .pokerContainer-seat2 .player7-pot,
+        .pokerContainer-seat2 .player8-pot {
+            position: absolute;
+            bottom: -100%;
+            display: flex;
+            flex-direction: column;
+            left: 0;
+            right: 0;
+        }
+
+        .pokerContainer-seat2 .player9-pot,
+        .pokerContainer-seat2 .player10-pot,
+        .pokerContainer-seat2 .player1-pot {
+            position: absolute;
+            left: -30%;
+            right: auto;
+            bottom: 0;
+            top: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .pokerContainer-seat3 {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+            gap: 6px 0px;
+            grid-template-areas:
+                ". player7 player8 player9 ."
+                "player6 communityCards communityCards communityCards player10"
+                "player5 communityCards communityCards communityCards player1"
+                "player4 communityCards communityCards communityCards player2"
+                ". . player3 . .";
+        }
+
+        .pokerContainer-seat3 .player3-pot {
+            position: absolute;
+            top: -150%;
+            display: flex;
+            flex-direction: column;
+            left: 0;
+            right: 0;
+        }
+
+        .pokerContainer-seat3 .player4-pot,
+        .pokerContainer-seat3 .player5-pot,
+        .pokerContainer-seat3 .player6-pot {
+            position: absolute;
+            right: -30%;
+            left: auto;
+            bottom: 0;
+            top: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .pokerContainer-seat3 .player7-pot,
+        .pokerContainer-seat3 .player8-pot,
+        .pokerContainer-seat3 .player9-pot {
+            position: absolute;
+            bottom: -100%;
+            display: flex;
+            flex-direction: column;
+            left: 0;
+            right: 0;
+        }
+
+        .pokerContainer-seat3 .player10-pot,
+        .pokerContainer-seat3 .player1-pot,
+        .pokerContainer-seat3 .player2-pot {
+            position: absolute;
+            left: -30%;
+            right: auto;
+            bottom: 0;
+            top: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .pokerContainer-seat4 {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+            gap: 6px 0px;
+            grid-template-areas:
+                ". player8 player9 player10 ."
+                "player7 communityCards communityCards communityCards player1"
+                "player6 communityCards communityCards communityCards player2"
+                "player5 communityCards communityCards communityCards player3"
+                ". . player4 . .";
+        }
+
+        .pokerContainer-seat4 .player4-pot {
+            position: absolute;
+            top: -150%;
+            display: flex;
+            flex-direction: column;
+            left: 0;
+            right: 0;
+        }
+
+        .pokerContainer-seat4 .player5-pot,
+        .pokerContainer-seat4 .player6-pot,
+        .pokerContainer-seat4 .player7-pot {
+            position: absolute;
+            right: -30%;
+            left: auto;
+            bottom: 0;
+            top: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .pokerContainer-seat4 .player8-pot,
+        .pokerContainer-seat4 .player9-pot,
+        .pokerContainer-seat4 .player10-pot {
+            position: absolute;
+            bottom: -100%;
+            display: flex;
+            flex-direction: column;
+            left: 0;
+            right: 0;
+        }
+
+        .pokerContainer-seat4 .player1-pot,
+        .pokerContainer-seat4 .player2-pot,
+        .pokerContainer-seat4 .player3-pot {
+            position: absolute;
+            left: -30%;
+            right: auto;
+            bottom: 0;
+            top: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .pokerContainer-seat5 {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+            gap: 6px 0px;
+            grid-template-areas:
+                ". player9 player10 player1 ."
+                "player8 communityCards communityCards communityCards player2"
+                "player7 communityCards communityCards communityCards player3"
+                "player6 communityCards communityCards communityCards player4"
+                ". . player5 . .";
+        }
+
+        .pokerContainer-seat5 .player5-pot {
+            position: absolute;
+            top: -150%;
+            display: flex;
+            flex-direction: column;
+            left: 0;
+            right: 0;
+        }
+
+        .pokerContainer-seat5 .player6-pot,
+        .pokerContainer-seat5 .player7-pot,
+        .pokerContainer-seat5 .player8-pot {
+            position: absolute;
+            right: -30%;
+            left: auto;
+            bottom: 0;
+            top: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .pokerContainer-seat5 .player9-pot,
+        .pokerContainer-seat5 .player10-pot,
+        .pokerContainer-seat5 .player1-pot {
+            position: absolute;
+            bottom: -100%;
+            display: flex;
+            flex-direction: column;
+            left: 0;
+            right: 0;
+        }
+
+        .pokerContainer-seat5 .player2-pot,
+        .pokerContainer-seat5 .player3-pot,
+        .pokerContainer-seat5 .player4-pot {
+            position: absolute;
+            left: -30%;
+            right: auto;
+            bottom: 0;
+            top: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .pokerContainer-seat6 {
+            display: grid;
+            grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+            gap: 6px 0px;
+            grid-template-areas:
+                ". player10 player1 player2 ."
+                "player9 communityCards communityCards communityCards player3"
+                "player8 communityCards communityCards communityCards player4"
+                "player7 communityCards communityCards communityCards player5"
+                ". . player6 . .";
+        }
+
+        .pokerContainer-seat6 .player6-pot {
+            position: absolute;
+            top: -150%;
+            display: flex;
+            flex-direction: column;
+            left: 0;
+            right: 0;
+        }
+
+        .pokerContainer-seat6 .player7-pot,
+        .pokerContainer-seat6 .player8-pot,
+        .pokerContainer-seat6 .player9-pot {
+            position: absolute;
+            right: -30%;
+            left: auto;
+            bottom: 0;
+            top: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .pokerContainer-seat6 .player10-pot,
+        .pokerContainer-seat6 .player1-pot,
+        .pokerContainer-seat6 .player2-pot {
+            position: absolute;
+            bottom: -100%;
+            display: flex;
+            flex-direction: column;
+            left: 0;
+            right: 0;
+        }
+
+
+        .pokerContainer-seat6 .player3-pot,
+        .pokerContainer-seat6 .player4-pot,
+        .pokerContainer-seat6 .player5-pot {
+            position: absolute;
+            left: -30%;
+            right: auto;
+            bottom: 0;
+            top: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+
+        .pokerContainer-seat7 {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+            gap: 6px 0px;
+            grid-template-areas:
+                ". player1 player2 player3 ."
+                "player10 communityCards communityCards communityCards player4"
+                "player9 communityCards communityCards communityCards player5"
+                "player8 communityCards communityCards communityCards player6"
+                ". . player7 . .";
+        }
+
+        .pokerContainer-seat7 .player7-pot {
+            position: absolute;
+            top: -150%;
+            display: flex;
+            flex-direction: column;
+            left: 0;
+            right: 0;
+        }
+
+        .pokerContainer-seat7 .player8-pot,
+        .pokerContainer-seat7 .player9-pot,
+        .pokerContainer-seat7 .player10-pot {
+            position: absolute;
+            right: -30%;
+            left: auto;
+            bottom: 0;
+            top: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .pokerContainer-seat7 .player1-pot,
+        .pokerContainer-seat7 .player2-pot,
+        .pokerContainer-seat7 .player3-pot {
+            position: absolute;
+            bottom: -100%;
+            display: flex;
+            flex-direction: column;
+            left: 0;
+            right: 0;
+        }
+
+        .pokerContainer-seat7 .player4-pot,
+        .pokerContainer-seat7 .player5-pot,
+        .pokerContainer-seat7 .player6-pot {
+            position: absolute;
+            left: -30%;
+            right: auto;
+            bottom: 0;
+            top: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .pokerContainer-seat8 {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+            gap: 6px 0px;
+            grid-template-areas:
+                ". player2 player3 player4 ."
+                "player1 communityCards communityCards communityCards player5"
+                "player10 communityCards communityCards communityCards player6"
+                "player9 communityCards communityCards communityCards player7"
+                ". . player8 . .";
+        }
+
+        .pokerContainer-seat8 .player8-pot {
+            position: absolute;
+            top: -150%;
+            display: flex;
+            flex-direction: column;
+            left: 0;
+            right: 0;
+        }
+
+        .pokerContainer-seat8 .player9-pot,
+        .pokerContainer-seat8 .player10-pot,
+        .pokerContainer-seat8 .player1-pot {
+            position: absolute;
+            right: -30%;
+            left: auto;
+            bottom: 0;
+            top: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .pokerContainer-seat8 .player2-pot,
+        .pokerContainer-seat8 .player3-pot,
+        .pokerContainer-seat8 .player4-pot {
+            position: absolute;
+            bottom: -100%;
+            display: flex;
+            flex-direction: column;
+            left: 0;
+            right: 0;
+        }
+
+        .pokerContainer-seat8 .player5-pot,
+        .pokerContainer-seat8 .player6-pot,
+        .pokerContainer-seat8 .player7-pot {
+            position: absolute;
+            left: -30%;
+            right: auto;
+            bottom: 0;
+            top: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .pokerContainer-seat9 {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+            gap: 6px 0px;
+            grid-template-areas:
+                ". player3 player4 player5 ."
+                "player2 communityCards communityCards communityCards player6"
+                "player1 communityCards communityCards communityCards player7"
+                "player10 communityCards communityCards communityCards player8"
+                ". . player9 . .";
+        }
+
+        .pokerContainer-seat9 .player9-pot {
+            position: absolute;
+            top: -150%;
+            display: flex;
+            flex-direction: column;
+            left: 0;
+            right: 0;
+        }
+
+        .pokerContainer-seat9 .player10-pot,
+        .pokerContainer-seat9 .player1-pot,
+        .pokerContainer-seat9 .player2-pot {
+            position: absolute;
+            right: -30%;
+            left: auto;
+            bottom: 0;
+            top: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .pokerContainer-seat9 .player3-pot,
+        .pokerContainer-seat9 .player4-pot,
+        .pokerContainer-seat9 .player5-pot {
+            position: absolute;
+            bottom: -100%;
+            display: flex;
+            flex-direction: column;
+            left: 0;
+            right: 0;
+        }
+
+        .pokerContainer-seat9 .player6-pot,
+        .pokerContainer-seat9 .player7-pot,
+        .pokerContainer-seat9 .player8-pot {
+            position: absolute;
+            left: -30%;
+            right: auto;
+            bottom: 0;
+            top: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .pokerContainer-seat10 {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+            gap: 6px 0px;
+            grid-template-areas:
+                ". player4 player5 player6 ."
+                "player3 communityCards communityCards communityCards player7"
+                "player2 communityCards communityCards communityCards player8"
+                "player1 communityCards communityCards communityCards player9"
+                ". . player10 . .";
+        }
+
+        .pokerContainer-seat10 .player10-pot {
+            position: absolute;
+            top: -150%;
+            display: flex;
+            flex-direction: column;
+            left: 0;
+            right: 0;
+        }
+
+        .pokerContainer-seat10 .player1-pot,
+        .pokerContainer-seat10 .player2-pot,
+        .pokerContainer-seat10 .player3-pot {
+            position: absolute;
+            right: -30%;
+            left: auto;
+            bottom: 0;
+            top: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .pokerContainer-seat10 .player4-pot,
+        .pokerContainer-seat10 .player5-pot,
+        .pokerContainer-seat10 .player6-pot {
+            position: absolute;
+            bottom: -100%;
+            display: flex;
+            flex-direction: column;
+            left: 0;
+            right: 0;
+        }
+
+        .pokerContainer-seat10 .player7-pot,
+        .pokerContainer-seat10 .player8-pot,
+        .pokerContainer-seat10 .player9-pot {
+            position: absolute;
+            left: -30%;
+            right: auto;
+            bottom: 0;
+            top: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+
+        .potContainer {
+            grid-column-start: 2;
+            grid-column-end: 5;
+            grid-row-start: 2;
+            grid-row-end: 3;
+        }
+    }
+}
+
+.table9players {
+    .pokerContainer-seat1 {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+        gap: 6px 0px;
+        grid-template-areas:
+            ". player5 . player6 ."
+            "player4 communityCards communityCards communityCards player7"
+            ". communityCards communityCards communityCards ."
+            "player3 communityCards communityCards communityCards  player8"
+            ". player2 player1 player9 .";
+    }
+
+    .pokerContainer-seat1 .player9-pot,
+    .pokerContainer-seat1 .player1-pot,
+    .pokerContainer-seat1 .player2-pot {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        top: -150%;
+        left: 0;
+        right: 0;
+    }
+
+    .pokerContainer-seat1 .player3-pot,
+    .pokerContainer-seat1 .player4-pot {
+        position: absolute;
+        right: -30%;
+        left: auto;
+        bottom: 0;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pokerContainer-seat1 .player5-pot,
+    .pokerContainer-seat1 .player6-pot {
+        position: absolute;
+        bottom: -100%;
+        display: flex;
+        flex-direction: column;
+        left: 0;
+        right: 0;
+    }
+
+    .pokerContainer-seat1 .player7-pot,
+    .pokerContainer-seat1 .player8-pot {
+        position: absolute;
+        left: -30%;
+        right: auto;
+        bottom: 0;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+
+
+    .pokerContainer-seat2 {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+        gap: 6px 0px;
+        grid-template-areas:
+            ". player6 . player7 ."
+            "player5 communityCards communityCards communityCards player8"
+            ". communityCards communityCards communityCards ."
+            "player4 communityCards communityCards communityCards  player9"
+            ". player3 player2 player1 .";
+    }
+
+    .pokerContainer-seat2 .player1-pot,
+    .pokerContainer-seat2 .player2-pot,
+    .pokerContainer-seat2 .player3-pot {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        top: -150%;
+        left: 0;
+        right: 0;
+    }
+
+    .pokerContainer-seat2 .player4-pot,
+    .pokerContainer-seat2 .player5-pot {
+        position: absolute;
+        right: -30%;
+        left: auto;
+        bottom: 0;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pokerContainer-seat2 .player6-pot,
+    .pokerContainer-seat2 .player7-pot {
+        position: absolute;
+        bottom: -100%;
+        display: flex;
+        flex-direction: column;
+        left: 0;
+        right: 0;
+    }
+
+    .pokerContainer-seat2 .player8-pot,
+    .pokerContainer-seat2 .player9-pot {
+        position: absolute;
+        left: -30%;
+        right: auto;
+        bottom: 0;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pokerContainer-seat3 {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+        gap: 6px 0px;
+        grid-template-areas:
+            ". player7 . player8 ."
+            "player6 communityCards communityCards communityCards player9"
+            ". communityCards communityCards communityCards ."
+            "player5 communityCards communityCards communityCards  player1"
+            ". player4 player3 player2 .";
+    }
+
+    .pokerContainer-seat3 .player2-pot,
+    .pokerContainer-seat3 .player3-pot,
+    .pokerContainer-seat3 .player4-pot {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        top: -150%;
+        left: 0;
+        right: 0;
+    }
+
+    .pokerContainer-seat3 .player5-pot,
+    .pokerContainer-seat3 .player6-pot {
+        position: absolute;
+        right: -30%;
+        left: auto;
+        bottom: 0;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pokerContainer-seat3 .player7-pot,
+    .pokerContainer-seat3 .player8-pot {
+        position: absolute;
+        bottom: -100%;
+        display: flex;
+        flex-direction: column;
+        left: 0;
+        right: 0;
+    }
+
+    .pokerContainer-seat3 .player9-pot,
+    .pokerContainer-seat3 .player1-pot {
+        position: absolute;
+        left: -30%;
+        right: auto;
+        bottom: 0;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pokerContainer-seat4 {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+        gap: 6px 0px;
+        grid-template-areas:
+            ". player8 . player9 ."
+            "player7 communityCards communityCards communityCards player1"
+            ". communityCards communityCards communityCards ."
+            "player6 communityCards communityCards communityCards  player2"
+            ". player5 player4 player3 .";
+    }
+
+    .pokerContainer-seat4 .player3-pot,
+    .pokerContainer-seat4 .player4-pot,
+    .pokerContainer-seat4 .player5-pot {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        top: -150%;
+        left: 0;
+        right: 0;
+    }
+
+    .pokerContainer-seat4 .player6-pot,
+    .pokerContainer-seat4 .player7-pot {
+        position: absolute;
+        right: -30%;
+        left: auto;
+        bottom: 0;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pokerContainer-seat4 .player8-pot,
+    .pokerContainer-seat4 .player9-pot {
+        position: absolute;
+        bottom: -100%;
+        display: flex;
+        flex-direction: column;
+        left: 0;
+        right: 0;
+    }
+
+
+    .pokerContainer-seat4 .player1-pot,
+    .pokerContainer-seat4 .player2-pot {
+        position: absolute;
+        left: -30%;
+        right: auto;
+        bottom: 0;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+
+    .pokerContainer-seat5 {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+        gap: 6px 0px;
+        grid-template-areas:
+            ". player9 . player1 ."
+            "player8 communityCards communityCards communityCards player2"
+            ". communityCards communityCards communityCards ."
+            "player7 communityCards communityCards communityCards  player3"
+            ". player6 player5 player4 .";
+    }
+
+
+    .pokerContainer-seat5 .player4-pot,
+    .pokerContainer-seat5 .player5-pot,
+    .pokerContainer-seat5 .player6-pot {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        top: -150%;
+        left: 0;
+        right: 0;
+    }
+
+    .pokerContainer-seat5 .player7-pot,
+    .pokerContainer-seat5 .player8-pot {
+        position: absolute;
+        right: -30%;
+        left: auto;
+        bottom: 0;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pokerContainer-seat5 .player9-pot,
+    .pokerContainer-seat5 .player1-pot {
+        position: absolute;
+        bottom: -100%;
+        display: flex;
+        flex-direction: column;
+        left: 0;
+        right: 0;
+    }
+
+    .pokerContainer-seat5 .player2-pot,
+    .pokerContainer-seat5 .player3-pot {
+        position: absolute;
+        left: -30%;
+        right: auto;
+        bottom: 0;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pokerContainer-seat6 {
+        display: grid;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+        gap: 6px 0px;
+        grid-template-areas:
+            ". player1 . player2 ."
+            "player9 communityCards communityCards communityCards player3"
+            ". communityCards communityCards communityCards ."
+            "player8 communityCards communityCards communityCards  player4"
+            ". player7 player6 player5 .";
+    }
+
+    .pokerContainer-seat6 .player5-pot,
+    .pokerContainer-seat6 .player6-pot,
+    .pokerContainer-seat6 .player7-pot {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        top: -150%;
+        left: 0;
+        right: 0;
+    }
+
+    .pokerContainer-seat6 .player8-pot,
+    .pokerContainer-seat6 .player9-pot {
+        position: absolute;
+        right: -30%;
+        left: auto;
+        bottom: 0;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pokerContainer-seat6 .player1-pot,
+    .pokerContainer-seat6 .player2-pot {
+        position: absolute;
+        bottom: -100%;
+        display: flex;
+        flex-direction: column;
+        left: 0;
+        right: 0;
+    }
+
+    .pokerContainer-seat6 .player3-pot,
+    .pokerContainer-seat6 .player4-pot {
+        position: absolute;
+        left: -30%;
+        right: auto;
+        bottom: 0;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+
+    .pokerContainer-seat7 {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+        gap: 6px 0px;
+        grid-template-areas:
+            ". player2 . player3 ."
+            "player1 communityCards communityCards communityCards player4"
+            ". communityCards communityCards communityCards ."
+            "player9 communityCards communityCards communityCards  player5"
+            ". player8 player7 player6 .";
+    }
+
+    .pokerContainer-seat7 .player6-pot,
+    .pokerContainer-seat7 .player7-pot,
+    .pokerContainer-seat7 .player8-pot {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        top: -150%;
+        left: 0;
+        right: 0;
+    }
+
+    .pokerContainer-seat7 .player9-pot,
+    .pokerContainer-seat7 .player1-pot {
+        position: absolute;
+        right: -30%;
+        left: auto;
+        bottom: 0;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pokerContainer-seat7 .player2-pot,
+    .pokerContainer-seat7 .player3-pot {
+        position: absolute;
+        bottom: -100%;
+        display: flex;
+        flex-direction: column;
+        left: 0;
+        right: 0;
+    }
+
+    .pokerContainer-seat7 .player4-pot,
+    .pokerContainer-seat7 .player5-pot {
+        position: absolute;
+        left: -30%;
+        right: auto;
+        bottom: 0;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pokerContainer-seat8 {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+        gap: 6px 0px;
+        grid-template-areas:
+            ". player3 . player4 ."
+            "player2 communityCards communityCards communityCards player5"
+            ". communityCards communityCards communityCards ."
+            "player1 communityCards communityCards communityCards  player6"
+            ". player9 player8 player7 .";
+    }
+
+    .pokerContainer-seat8 .player7-pot,
+    .pokerContainer-seat8 .player8-pot,
+    .pokerContainer-seat8 .player9-pot {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        top: -150%;
+        left: 0;
+        right: 0;
+    }
+
+    .pokerContainer-seat8 .player1-pot,
+    .pokerContainer-seat8 .player2-pot {
+        position: absolute;
+        right: -30%;
+        left: auto;
+        bottom: 0;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pokerContainer-seat8 .player3-pot,
+    .pokerContainer-seat8 .player4-pot {
+        position: absolute;
+        bottom: -100%;
+        display: flex;
+        flex-direction: column;
+        left: 0;
+        right: 0;
+    }
+
+    .pokerContainer-seat8 .player5-pot,
+    .pokerContainer-seat8 .player6-pot {
+        position: absolute;
+        left: -30%;
+        right: auto;
+        bottom: 0;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pokerContainer-seat9 {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+        gap: 6px 0px;
+        grid-template-areas:
+            ". player4 . player5 ."
+            "player3 communityCards communityCards communityCards player6"
+            ". communityCards communityCards communityCards ."
+            "player2 communityCards communityCards communityCards  player7"
+            ". player1 player9 player8 .";
+    }
+
+    .pokerContainer-seat9 .player8-pot,
+    .pokerContainer-seat9 .player9-pot,
+    .pokerContainer-seat9 .player1-pot {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        top: -150%;
+        left: 0;
+        right: 0;
+    }
+
+    .pokerContainer-seat9 .player2-pot,
+    .pokerContainer-seat9 .player3-pot {
+        position: absolute;
+        right: -30%;
+        left: auto;
+        bottom: 0;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pokerContainer-seat9 .player4-pot,
+    .pokerContainer-seat9 .player5-pot {
+        position: absolute;
+        bottom: -100%;
+        display: flex;
+        flex-direction: column;
+        left: 0;
+        right: 0;
+    }
+
+    .pokerContainer-seat9 .player6-pot,
+    .pokerContainer-seat9 .player7-pot {
+        position: absolute;
+        left: -30%;
+        right: auto;
+        bottom: 0;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+
+    /* media querioes */
+    /* max-width: 1000px; */
+    @media (max-width: 1000px) {
+        .pokerContainer-seat1 {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+            gap: 6px 0px;
+            grid-template-areas:
+                ". player5 . player6 ."
+                "player4 communityCards communityCards communityCards player7"
+                "player3 communityCards communityCards communityCards player8"
+                "player2 communityCards communityCards communityCards player9"
+                ". . player1 . .";
+        }
+
+        .pokerContainer-seat1 .player1-pot {
+            position: absolute;
+            top: -150%;
+            left: 0;
+            right: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .pokerContainer-seat1 .player2-pot,
+        .pokerContainer-seat1 .player3-pot,
+        .pokerContainer-seat1 .player4-pot {
+            position: absolute;
+            right: -30%;
+            left: auto;
+            bottom: 0;
+            top: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .pokerContainer-seat1 .player5-pot,
+        .pokerContainer-seat1 .player6-pot {
+            position: absolute;
+            bottom: -100%;
+            display: flex;
+            flex-direction: column;
+            left: 0;
+            right: 0;
+        }
+
+        .pokerContainer-seat1 .player7-pot,
+        .pokerContainer-seat1 .player8-pot,
+        .pokerContainer-seat1 .player9-pot {
+            position: absolute;
+            left: -30%;
+            right: auto;
+            bottom: 0;
+            top: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+
+        .pokerContainer-seat2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+            gap: 6px 0px;
+            grid-template-areas:
+                ". player6 . player7 ."
+                "player5 communityCards communityCards communityCards player8"
+                "player4 communityCards communityCards communityCards player9"
+                "player3 communityCards communityCards communityCards player1"
+                ". . player2 . .";
+        }
+
+        .pokerContainer-seat2 .player2-pot {
+            position: absolute;
+            top: -150%;
+            left: 0;
+            right: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .pokerContainer-seat2 .player3-pot,
+        .pokerContainer-seat2 .player4-pot,
+        .pokerContainer-seat2 .player5-pot {
+            position: absolute;
+            right: -30%;
+            left: auto;
+            bottom: 0;
+            top: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .pokerContainer-seat2 .player6-pot,
+        .pokerContainer-seat2 .player7-pot {
+            position: absolute;
+            bottom: -100%;
+            display: flex;
+            flex-direction: column;
+            left: 0;
+            right: 0;
+        }
+
+        .pokerContainer-seat2 .player8-pot,
+        .pokerContainer-seat2 .player9-pot,
+        .pokerContainer-seat2 .player1-pot {
+            position: absolute;
+            left: -30%;
+            right: auto;
+            bottom: 0;
+            top: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .pokerContainer-seat3 {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+            gap: 6px 0px;
+            grid-template-areas:
+                ". player7 . player8 ."
+                "player6 communityCards communityCards communityCards player9"
+                "player5 communityCards communityCards communityCards player1"
+                "player4 communityCards communityCards communityCards player2"
+                ". . player3 . .";
+        }
+
+        .pokerContainer-seat3 .player3-pot {
+            position: absolute;
+            top: -150%;
+            left: 0;
+            right: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .pokerContainer-seat3 .player4-pot,
+        .pokerContainer-seat3 .player5-pot,
+        .pokerContainer-seat3 .player6-pot {
+            position: absolute;
+            right: -30%;
+            left: auto;
+            bottom: 0;
+            top: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .pokerContainer-seat3 .player7-pot,
+        .pokerContainer-seat3 .player8-pot {
+            position: absolute;
+            bottom: -100%;
+            display: flex;
+            flex-direction: column;
+            left: 0;
+            right: 0;
+        }
+
+        .pokerContainer-seat3 .player9-pot,
+        .pokerContainer-seat3 .player1-pot,
+        .pokerContainer-seat3 .player2-pot {
+            position: absolute;
+            left: -30%;
+            right: auto;
+            bottom: 0;
+            top: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+
+        .pokerContainer-seat4 {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+            gap: 6px 0px;
+            grid-template-areas:
+                ". player8 . player9 ."
+                "player7 communityCards communityCards communityCards player1"
+                "player6 communityCards communityCards communityCards player2"
+                "player5 communityCards communityCards communityCards player3"
+                ". . player4 . .";
+        }
+
+        .pokerContainer-seat4 .player4-pot {
+            position: absolute;
+            top: -150%;
+            left: 0;
+            right: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .pokerContainer-seat4 .player5-pot,
+        .pokerContainer-seat4 .player6-pot,
+        .pokerContainer-seat4 .player7-pot {
+            position: absolute;
+            right: -30%;
+            left: auto;
+            bottom: 0;
+            top: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .pokerContainer-seat4 .player8-pot,
+        .pokerContainer-seat4 .player9-pot {
+            position: absolute;
+            bottom: -100%;
+            display: flex;
+            flex-direction: column;
+            left: 0;
+            right: 0;
+        }
+
+        .pokerContainer-seat4 .player1-pot,
+        .pokerContainer-seat4 .player2-pot,
+        .pokerContainer-seat4 .player3-pot {
+            position: absolute;
+            left: -30%;
+            right: auto;
+            bottom: 0;
+            top: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .pokerContainer-seat5 {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+            gap: 6px 0px;
+            grid-template-areas:
+                ". player9 . player1 ."
+                "player8 communityCards communityCards communityCards player2"
+                "player7 communityCards communityCards communityCards player3"
+                "player6 communityCards communityCards communityCards player4"
+                ". . player5 . .";
+        }
+
+        .pokerContainer-seat5 .player5-pot {
+            position: absolute;
+            top: -150%;
+            left: 0;
+            right: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .pokerContainer-seat5 .player6-pot,
+        .pokerContainer-seat5 .player7-pot,
+        .pokerContainer-seat5 .player8-pot {
+            position: absolute;
+            right: -30%;
+            left: auto;
+            bottom: 0;
+            top: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .pokerContainer-seat5 .player9-pot,
+        .pokerContainer-seat5 .player1-pot {
+            position: absolute;
+            bottom: -100%;
+            display: flex;
+            flex-direction: column;
+            left: 0;
+            right: 0;
+        }
+
+        .pokerContainer-seat5 .player2-pot,
+        .pokerContainer-seat5 .player3-pot,
+        .pokerContainer-seat5 .player4-pot {
+            position: absolute;
+            left: -30%;
+            right: auto;
+            bottom: 0;
+            top: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+
+        .pokerContainer-seat6 {
+            display: grid;
+            grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 6px 0px;
+            grid-template-areas:
+                ". player1 . player2 ."
+                "player9 communityCards communityCards communityCards player3"
+                "player8 communityCards communityCards communityCards player4"
+                "player7 communityCards communityCards communityCards player5"
+                ". . player6 . .";
+        }
+
+        .pokerContainer-seat6 .player6-pot {
+            position: absolute;
+            top: -150%;
+            left: 0;
+            right: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .pokerContainer-seat6 .player7-pot,
+        .pokerContainer-seat6 .player8-pot,
+        .pokerContainer-seat6 .player9-pot {
+            position: absolute;
+            right: -30%;
+            left: auto;
+            bottom: 0;
+            top: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .pokerContainer-seat6 .player1-pot,
+        .pokerContainer-seat6 .player2-pot {
+            position: absolute;
+            bottom: -100%;
+            display: flex;
+            flex-direction: column;
+            left: 0;
+            right: 0;
+        }
+
+        .pokerContainer-seat6 .player3-pot,
+        .pokerContainer-seat6 .player4-pot,
+        .pokerContainer-seat6 .player5-pot {
+            position: absolute;
+            left: -30%;
+            right: auto;
+            bottom: 0;
+            top: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+
+        .pokerContainer-seat7 {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+            gap: 6px 0px;
+            grid-template-areas:
+                ". player2 . player3 ."
+                "player1 communityCards communityCards communityCards player4"
+                "player9 communityCards communityCards communityCards player5"
+                "player8 communityCards communityCards communityCards player6"
+                ". . player7 . .";
+        }
+
+        .pokerContainer-seat7 .player7-pot {
+            position: absolute;
+            top: -150%;
+            left: 0;
+            right: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .pokerContainer-seat7 .player8-pot,
+        .pokerContainer-seat7 .player9-pot,
+        .pokerContainer-seat7 .player1-pot {
+            position: absolute;
+            right: -30%;
+            left: auto;
+            bottom: 0;
+            top: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .pokerContainer-seat7 .player2-pot,
+        .pokerContainer-seat7 .player3-pot {
+            position: absolute;
+            bottom: -100%;
+            display: flex;
+            flex-direction: column;
+            left: 0;
+            right: 0;
+        }
+
+        .pokerContainer-seat7 .player4-pot,
+        .pokerContainer-seat7 .player5-pot,
+        .pokerContainer-seat7 .player6-pot {
+            position: absolute;
+            left: -30%;
+            right: auto;
+            bottom: 0;
+            top: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .pokerContainer-seat8 {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+            gap: 6px 0px;
+            grid-template-areas:
+                ". player3 . player4 ."
+                "player2 communityCards communityCards communityCards player5"
+                "player1 communityCards communityCards communityCards player6"
+                "player9 communityCards communityCards communityCards player7"
+                ". . player8 . .";
+        }
+
+        .pokerContainer-seat8 .player8-pot {
+            position: absolute;
+            top: -150%;
+            left: 0;
+            right: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .pokerContainer-seat8 .player9-pot,
+        .pokerContainer-seat8 .player1-pot,
+        .pokerContainer-seat8 .player2-pot {
+            position: absolute;
+            right: -30%;
+            left: auto;
+            bottom: 0;
+            top: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .pokerContainer-seat8 .player3-pot,
+        .pokerContainer-seat8 .player4-pot {
+            position: absolute;
+            bottom: -100%;
+            display: flex;
+            flex-direction: column;
+            left: 0;
+            right: 0;
+        }
+
+        .pokerContainer-seat8 .player5-pot,
+        .pokerContainer-seat8 .player6-pot,
+        .pokerContainer-seat8 .player7-pot {
+            position: absolute;
+            left: -30%;
+            right: auto;
+            bottom: 0;
+            top: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .pokerContainer-seat9 {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+            gap: 6px 0px;
+            grid-template-areas:
+                ". player4 . player5 ."
+                "player3 communityCards communityCards communityCards player6"
+                "player2 communityCards communityCards communityCards player7"
+                "player1 communityCards communityCards communityCards player8"
+                ". . player9 . .";
+        }
+
+        .pokerContainer-seat9 .player9-pot {
+            position: absolute;
+            top: -150%;
+            left: 0;
+            right: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .pokerContainer-seat9 .player1-pot,
+        .pokerContainer-seat9 .player2-pot,
+        .pokerContainer-seat9 .player3-pot {
+            position: absolute;
+            right: -30%;
+            left: auto;
+            bottom: 0;
+            top: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .pokerContainer-seat9 .player4-pot,
+        .pokerContainer-seat9 .player5-pot {
+            position: absolute;
+            bottom: -100%;
+            display: flex;
+            flex-direction: column;
+            left: 0;
+            right: 0;
+        }
+
+        .pokerContainer-seat9 .player6-pot,
+        .pokerContainer-seat9 .player7-pot,
+        .pokerContainer-seat9 .player8-pot {
+            position: absolute;
+            left: -30%;
+            right: auto;
+            bottom: 0;
+            top: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+    }
+}
+
+.table8players {
+    .pokerContainer-seat1 {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+        gap: 6px 0px;
+        grid-template-areas:
+            ". player4 player5 player6 ."
+            "player3 communityCards communityCards communityCards player7"
+            ". communityCards communityCards communityCards ."
+            "player2 communityCards communityCards communityCards player8"
+            ". . player1 . .";
+    }
+
+    .pokerContainer-seat1 .player1-pot {
+        position: absolute;
+        top: -150%;
+        left: 0;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pokerContainer-seat1 .player2-pot,
+    .pokerContainer-seat1 .player3-pot {
+        position: absolute;
+        right: -30%;
+        left: auto;
+        bottom: 0;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pokerContainer-seat1 .player4-pot,
+    .pokerContainer-seat1 .player5-pot,
+    .pokerContainer-seat1 .player6-pot {
+        position: absolute;
+        bottom: -100%;
+        display: flex;
+        flex-direction: column;
+        left: 0;
+        right: 0;
+    }
+
+    .pokerContainer-seat1 .player7-pot,
+    .pokerContainer-seat1 .player8-pot {
+        position: absolute;
+        left: -30%;
+        right: auto;
+        bottom: 0;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+
+
+    .pokerContainer-seat2 {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+        gap: 6px 0px;
+        grid-template-areas:
+            ". player5 player6 player7 ."
+            "player4 communityCards communityCards communityCards player8"
+            ". communityCards communityCards communityCards ."
+            "player3 communityCards communityCards communityCards player1"
+            ". . player2 . .";
+    }
+
+    .pokerContainer-seat2 .player2-pot {
+        position: absolute;
+        top: -150%;
+        left: 0;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pokerContainer-seat2 .player3-pot,
+    .pokerContainer-seat2 .player4-pot {
+        position: absolute;
+        right: -30%;
+        left: auto;
+        bottom: 0;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pokerContainer-seat2 .player5-pot,
+    .pokerContainer-seat2 .player6-pot,
+    .pokerContainer-seat2 .player7-pot {
+        position: absolute;
+        bottom: -100%;
+        display: flex;
+        flex-direction: column;
+        left: 0;
+        right: 0;
+    }
+
+    .pokerContainer-seat2 .player8-pot,
+    .pokerContainer-seat2 .player1-pot {
+        position: absolute;
+        left: -30%;
+        right: auto;
+        bottom: 0;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pokerContainer-seat3 {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+        gap: 6px 0px;
+        grid-template-areas:
+            ". player6 player7 player8 ."
+            "player5 communityCards communityCards communityCards player1"
+            ". communityCards communityCards communityCards ."
+            "player4 communityCards communityCards communityCards player2"
+            ". . player3 . .";
+    }
+
+    .pokerContainer-seat3 .player3-pot {
+        position: absolute;
+        top: -150%;
+        left: 0;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pokerContainer-seat3 .player4-pot,
+    .pokerContainer-seat3 .player5-pot {
+        position: absolute;
+        right: -30%;
+        left: auto;
+        bottom: 0;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pokerContainer-seat3 .player6-pot,
+    .pokerContainer-seat3 .player7-pot,
+    .pokerContainer-seat3 .player8-pot {
+        position: absolute;
+        bottom: -100%;
+        display: flex;
+        flex-direction: column;
+        left: 0;
+        right: 0;
+    }
+
+    .pokerContainer-seat3 .player1-pot,
+    .pokerContainer-seat3 .player2-pot {
+        position: absolute;
+        left: -30%;
+        right: auto;
+        bottom: 0;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pokerContainer-seat4 {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+        gap: 6px 0px;
+        grid-template-areas:
+            ". player7 player8 player1 ."
+            "player6 communityCards communityCards communityCards player2"
+            ". communityCards communityCards communityCards ."
+            "player5 communityCards communityCards communityCards player3"
+            ". . player4 . .";
+    }
+
+    .pokerContainer-seat4 .player4-pot {
+        position: absolute;
+        top: -150%;
+        left: 0;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pokerContainer-seat4 .player5-pot,
+    .pokerContainer-seat4 .player6-pot {
+        position: absolute;
+        right: -30%;
+        left: auto;
+        bottom: 0;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pokerContainer-seat4 .player7-pot,
+    .pokerContainer-seat4 .player8-pot,
+    .pokerContainer-seat4 .player1-pot {
+        position: absolute;
+        bottom: -100%;
+        display: flex;
+        flex-direction: column;
+        left: 0;
+        right: 0;
+    }
+
+    .pokerContainer-seat4 .player2-pot,
+    .pokerContainer-seat4 .player3-pot {
+        position: absolute;
+        left: -30%;
+        right: auto;
+        bottom: 0;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pokerContainer-seat5 {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+        gap: 6px 0px;
+        grid-template-areas:
+            ". player8 player1 player2 ."
+            "player7 communityCards communityCards communityCards player3"
+            ". communityCards communityCards communityCards ."
+            "player6 communityCards communityCards communityCards player4"
+            ". . player5 . .";
+    }
+
+    .pokerContainer-seat5 .player5-pot {
+        position: absolute;
+        top: -150%;
+        left: 0;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pokerContainer-seat5 .player6-pot,
+    .pokerContainer-seat5 .player7-pot {
+        position: absolute;
+        right: -30%;
+        left: auto;
+        bottom: 0;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pokerContainer-seat5 .player8-pot,
+    .pokerContainer-seat5 .player1-pot,
+    .pokerContainer-seat5 .player2-pot {
+        position: absolute;
+        bottom: -100%;
+        display: flex;
+        flex-direction: column;
+        left: 0;
+        right: 0;
+    }
+
+    .pokerContainer-seat5 .player3-pot,
+    .pokerContainer-seat5 .player4-pot {
+        position: absolute;
+        left: -30%;
+        right: auto;
+        bottom: 0;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+
+
+    .pokerContainer-seat6 {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+        gap: 6px 0px;
+        grid-template-areas:
+            ". player1 player2 player3 ."
+            "player8 communityCards communityCards communityCards player4"
+            ". communityCards communityCards communityCards ."
+            "player7 communityCards communityCards communityCards player5"
+            ". . player6 . .";
+    }
+
+    .pokerContainer-seat6 .player6-pot {
+        position: absolute;
+        top: -150%;
+        left: 0;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pokerContainer-seat6 .player7-pot,
+    .pokerContainer-seat6 .player8-pot {
+        position: absolute;
+        right: -30%;
+        left: auto;
+        bottom: 0;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pokerContainer-seat6 .player1-pot,
+    .pokerContainer-seat6 .player2-pot,
+    .pokerContainer-seat6 .player3-pot {
+        position: absolute;
+        bottom: -100%;
+        display: flex;
+        flex-direction: column;
+        left: 0;
+        right: 0;
+    }
+
+    .pokerContainer-seat6 .player4-pot,
+    .pokerContainer-seat6 .player5-pot {
+        position: absolute;
+        left: -30%;
+        right: auto;
+        bottom: 0;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+
+    .pokerContainer-seat7 {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+        gap: 6px 0px;
+        grid-template-areas:
+            ". player2 player3 player4 ."
+            "player1 communityCards communityCards communityCards player5"
+            ". communityCards communityCards communityCards ."
+            "player8 communityCards communityCards communityCards player6"
+            ". . player7 . .";
+    }
+
+    .pokerContainer-seat7 .player7-pot {
+        position: absolute;
+        top: -150%;
+        left: 0;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pokerContainer-seat7 .player8-pot,
+    .pokerContainer-seat7 .player1-pot {
+        position: absolute;
+        right: -30%;
+        left: auto;
+        bottom: 0;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pokerContainer-seat7 .player2-pot,
+    .pokerContainer-seat7 .player3-pot,
+    .pokerContainer-seat7 .player4-pot {
+        position: absolute;
+        bottom: -100%;
+        display: flex;
+        flex-direction: column;
+        left: 0;
+        right: 0;
+    }
+
+    .pokerContainer-seat7 .player5-pot,
+    .pokerContainer-seat7 .player6-pot {
+        position: absolute;
+        left: -30%;
+        right: auto;
+        bottom: 0;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pokerContainer-seat8 {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+        gap: 6px 0px;
+        grid-template-areas:
+            ". player3 player4 player5 ."
+            "player2 communityCards communityCards communityCards player6"
+            ". communityCards communityCards communityCards ."
+            "player1 communityCards communityCards communityCards player7"
+            ". . player8 . .";
+    }
+
+    .pokerContainer-seat8 .player8-pot {
+        position: absolute;
+        top: -150%;
+        left: 0;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pokerContainer-seat8 .player1-pot,
+    .pokerContainer-seat8 .player2-pot {
+        position: absolute;
+        right: -30%;
+        left: auto;
+        bottom: 0;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pokerContainer-seat8 .player3-pot,
+    .pokerContainer-seat8 .player4-pot,
+    .pokerContainer-seat8 .player5-pot {
+        position: absolute;
+        bottom: -100%;
+        display: flex;
+        flex-direction: column;
+        left: 0;
+        right: 0;
+    }
+
+    .pokerContainer-seat8 .player6-pot,
+    .pokerContainer-seat8 .player7-pot {
+        position: absolute;
+        left: -30%;
+        right: auto;
+        bottom: 0;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* media queries */
+    @media (max-width: 1000px) {
+        .pokerContainer-seat1 {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+            gap: 6px 0px;
+            grid-template-areas:
+                ". . player5 . ."
+                "player4 communityCards communityCards communityCards player6"
+                "player3 communityCards communityCards communityCards player7"
+                "player2 communityCards communityCards communityCards player8"
+                ". . player1 . .";
+        }
+
+        .pokerContainer-seat1 .player1-pot {
+            position: absolute;
+            top: -150%;
+            left: 0;
+            right: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .pokerContainer-seat1 .player2-pot,
+        .pokerContainer-seat1 .player3-pot,
+        .pokerContainer-seat1 .player4-pot {
+            position: absolute;
+            right: -30%;
+            left: auto;
+            bottom: 0;
+            top: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .pokerContainer-seat1 .player5-pot {
+            position: absolute;
+            bottom: -100%;
+            display: flex;
+            flex-direction: column;
+            left: 0;
+            right: 0;
+        }
+
+        .pokerContainer-seat1 .player6-pot,
+        .pokerContainer-seat1 .player7-pot,
+        .pokerContainer-seat1 .player8-pot {
+            position: absolute;
+            left: -30%;
+            right: auto;
+            bottom: 0;
+            top: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+
+
+        .pokerContainer-seat2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+            gap: 6px 0px;
+            grid-template-areas:
+                ". . player6 . ."
+                "player5 communityCards communityCards communityCards player7"
+                "player4 communityCards communityCards communityCards player8"
+                "player3 communityCards communityCards communityCards player1"
+                ". . player2 . .";
+        }
+
+
+        .pokerContainer-seat2 .player2-pot {
+            position: absolute;
+            top: -150%;
+            left: 0;
+            right: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .pokerContainer-seat2 .player3-pot,
+        .pokerContainer-seat2 .player4-pot,
+        .pokerContainer-seat2 .player5-pot {
+            position: absolute;
+            right: -30%;
+            left: auto;
+            bottom: 0;
+            top: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .pokerContainer-seat2 .player6-pot {
+            position: absolute;
+            bottom: -100%;
+            display: flex;
+            flex-direction: column;
+            left: 0;
+            right: 0;
+        }
+
+        .pokerContainer-seat2 .player7-pot,
+        .pokerContainer-seat2 .player8-pot,
+        .pokerContainer-seat2 .player1-pot {
+            position: absolute;
+            left: -30%;
+            right: auto;
+            bottom: 0;
+            top: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .pokerContainer-seat3 {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+            gap: 6px 0px;
+            grid-template-areas:
+                ". . player7 . ."
+                "player6 communityCards communityCards communityCards player8"
+                "player5 communityCards communityCards communityCards player1"
+                "player4 communityCards communityCards communityCards player2"
+                ". . player3 . .";
+        }
+
+        .pokerContainer-seat3 .player3-pot {
+            position: absolute;
+            top: -150%;
+            left: 0;
+            right: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .pokerContainer-seat3 .player4-pot,
+        .pokerContainer-seat3 .player5-pot,
+        .pokerContainer-seat3 .player6-pot {
+            position: absolute;
+            right: -30%;
+            left: auto;
+            bottom: 0;
+            top: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .pokerContainer-seat3 .player7-pot {
+            position: absolute;
+            bottom: -100%;
+            display: flex;
+            flex-direction: column;
+            left: 0;
+            right: 0;
+        }
+
+        .pokerContainer-seat3 .player8-pot,
+        .pokerContainer-seat3 .player1-pot,
+        .pokerContainer-seat3 .player2-pot {
+            position: absolute;
+            left: -30%;
+            right: auto;
+            bottom: 0;
+            top: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+
+        .pokerContainer-seat4 {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+            gap: 6px 0px;
+            grid-template-areas:
+                ". . player8 . ."
+                "player7 communityCards communityCards communityCards player1"
+                "player6 communityCards communityCards communityCards player2"
+                "player5 communityCards communityCards communityCards player3"
+                ". . player4 . .";
+        }
+
+        .pokerContainer-seat4 .player4-pot {
+            position: absolute;
+            top: -150%;
+            left: 0;
+            right: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .pokerContainer-seat4 .player5-pot,
+        .pokerContainer-seat4 .player6-pot,
+        .pokerContainer-seat4 .player7-pot {
+            position: absolute;
+            right: -30%;
+            left: auto;
+            bottom: 0;
+            top: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .pokerContainer-seat4 .player8-pot {
+            position: absolute;
+            bottom: -100%;
+            display: flex;
+            flex-direction: column;
+            left: 0;
+            right: 0;
+        }
+
+        .pokerContainer-seat4 .player1-pot,
+        .pokerContainer-seat4 .player2-pot,
+        .pokerContainer-seat4 .player3-pot {
+            position: absolute;
+            left: -30%;
+            right: auto;
+            bottom: 0;
+            top: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .pokerContainer-seat5 {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+            gap: 6px 0px;
+            grid-template-areas:
+                ". . player1 . ."
+                "player8 communityCards communityCards communityCards player2"
+                "player7 communityCards communityCards communityCards player3"
+                "player6 communityCards communityCards communityCards player4"
+                ". . player5 . .";
+        }
+
+        .pokerContainer-seat5 .player5-pot {
+            position: absolute;
+            top: -150%;
+            left: 0;
+            right: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .pokerContainer-seat5 .player6-pot,
+        .pokerContainer-seat5 .player7-pot,
+        .pokerContainer-seat5 .player8-pot {
+            position: absolute;
+            right: -30%;
+            left: auto;
+            bottom: 0;
+            top: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .pokerContainer-seat5 .player1-pot {
+            position: absolute;
+            bottom: -100%;
+            display: flex;
+            flex-direction: column;
+            left: 0;
+            right: 0;
+        }
+
+        .pokerContainer-seat5 .player2-pot,
+        .pokerContainer-seat5 .player3-pot,
+        .pokerContainer-seat5 .player4-pot {
+            position: absolute;
+            left: -30%;
+            right: auto;
+            bottom: 0;
+            top: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+
+        .pokerContainer-seat6 {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+            gap: 6px 0px;
+            grid-template-areas:
+                ". . player2 . ."
+                "player1 communityCards communityCards communityCards player3"
+                "player8 communityCards communityCards communityCards player4"
+                "player7 communityCards communityCards communityCards player5"
+                ". . player6 . .";
+        }
+
+        .pokerContainer-seat6 .player6-pot {
+            position: absolute;
+            top: -150%;
+            left: 0;
+            right: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .pokerContainer-seat6 .player7-pot,
+        .pokerContainer-seat6 .player8-pot,
+        .pokerContainer-seat6 .player1-pot {
+            position: absolute;
+            right: -30%;
+            left: auto;
+            bottom: 0;
+            top: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .pokerContainer-seat6 .player2-pot {
+            position: absolute;
+            bottom: -100%;
+            display: flex;
+            flex-direction: column;
+            left: 0;
+            right: 0;
+        }
+
+        .pokerContainer-seat6 .player3-pot,
+        .pokerContainer-seat6 .player4-pot,
+        .pokerContainer-seat6 .player5-pot {
+            position: absolute;
+            left: -30%;
+            right: auto;
+            bottom: 0;
+            top: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+
+        .pokerContainer-seat7 {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+            gap: 6px 0px;
+            grid-template-areas:
+                ". . player3 . ."
+                "player2 communityCards communityCards communityCards player4"
+                "player1 communityCards communityCards communityCards player5"
+                "player8 communityCards communityCards communityCards player6"
+                ". . player7 . .";
+        }
+
+        .pokerContainer-seat7 .player7-pot {
+            position: absolute;
+            top: -150%;
+            left: 0;
+            right: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .pokerContainer-seat7 .player8-pot,
+        .pokerContainer-seat7 .player1-pot,
+        .pokerContainer-seat7 .player2-pot {
+            position: absolute;
+            right: -30%;
+            left: auto;
+            bottom: 0;
+            top: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .pokerContainer-seat7 .player3-pot {
+            position: absolute;
+            bottom: -100%;
+            display: flex;
+            flex-direction: column;
+            left: 0;
+            right: 0;
+        }
+
+        .pokerContainer-seat7 .player4-pot,
+        .pokerContainer-seat7 .player5-pot,
+        .pokerContainer-seat7 .player6-pot {
+            position: absolute;
+            left: -30%;
+            right: auto;
+            bottom: 0;
+            top: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+
+        .pokerContainer-seat8 {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+            gap: 6px 0px;
+            grid-template-areas:
+                ". . player4 . ."
+                "player3 communityCards communityCards communityCards player5"
+                "player2 communityCards communityCards communityCards player6"
+                "player1 communityCards communityCards communityCards player7"
+                ". . player8 . .";
+        }
+
+        .pokerContainer-seat8 .player8-pot {
+            position: absolute;
+            top: -150%;
+            left: 0;
+            right: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .pokerContainer-seat8 .player1-pot,
+        .pokerContainer-seat8 .player2-pot,
+        .pokerContainer-seat8 .player3-pot {
+            position: absolute;
+            right: -30%;
+            left: auto;
+            bottom: 0;
+            top: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .pokerContainer-seat8 .player4-pot {
+            position: absolute;
+            bottom: -100%;
+            display: flex;
+            flex-direction: column;
+            left: 0;
+            right: 0;
+        }
+
+        .pokerContainer-seat8 .player5-pot,
+        .pokerContainer-seat8 .player6-pot,
+        .pokerContainer-seat8 .player7-pot {
+            position: absolute;
+            left: -30%;
+            right: auto;
+            bottom: 0;
+            top: 0;
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+}
+
+.table7players {
+    .pokerContainer-seat1 {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+        gap: 6px 0px;
+        grid-template-areas:
+            ". player4 . player5 ."
+            "player3 communityCards communityCards communityCards player6"
+            ". communityCards communityCards communityCards ."
+            "player2 communityCards communityCards communityCards player7"
+            ". . player1 . .";
+    }
+
+    .pokerContainer-seat1 .player1-pot {
+        position: absolute;
+        top: -150%;
+        left: 0;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pokerContainer-seat1 .player2-pot,
+    .pokerContainer-seat1 .player3-pot {
+        position: absolute;
+        right: -30%;
+        left: auto;
+        bottom: 0;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pokerContainer-seat1 .player4-pot,
+    .pokerContainer-seat1 .player5-pot {
+        position: absolute;
+        bottom: -100%;
+        display: flex;
+        flex-direction: column;
+        left: 0;
+        right: 0;
+    }
+
+    .pokerContainer-seat1 .player6-pot,
+    .pokerContainer-seat1 .player7-pot {
+        position: absolute;
+        left: -30%;
+        right: auto;
+        bottom: 0;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+
+    }
+
+    .pokerContainer-seat2 {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+        gap: 6px 0px;
+        grid-template-areas:
+            ". player5 . player6 ."
+            "player4 communityCards communityCards communityCards player7"
+            ". communityCards communityCards communityCards ."
+            "player3 communityCards communityCards communityCards player1"
+            ". . player2 . .";
+    }
+
+    .pokerContainer-seat2 .player2-pot {
+        position: absolute;
+        top: -150%;
+        left: 0;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pokerContainer-seat2 .player3-pot,
+    .pokerContainer-seat2 .player4-pot {
+        position: absolute;
+        right: -30%;
+        left: auto;
+        bottom: 0;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pokerContainer-seat2 .player5-pot,
+    .pokerContainer-seat2 .player6-pot {
+        position: absolute;
+        bottom: -100%;
+        display: flex;
+        flex-direction: column;
+        left: 0;
+        right: 0;
+    }
+
+    .pokerContainer-seat2 .player7-pot,
+    .pokerContainer-seat2 .player1-pot {
+        position: absolute;
+        left: -30%;
+        right: auto;
+        bottom: 0;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pokerContainer-seat3 {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+        gap: 6px 0px;
+        grid-template-areas:
+            ". player6 . player7 ."
+            "player5 communityCards communityCards communityCards player1"
+            ". communityCards communityCards communityCards ."
+            "player4 communityCards communityCards communityCards player2"
+            ". . player3 . .";
+    }
+
+    .pokerContainer-seat3 .player3-pot {
+        position: absolute;
+        top: -150%;
+        left: 0;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pokerContainer-seat3 .player4-pot,
+    .pokerContainer-seat3 .player5-pot {
+        position: absolute;
+        right: -30%;
+        left: auto;
+        bottom: 0;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pokerContainer-seat3 .player6-pot,
+    .pokerContainer-seat3 .player7-pot {
+        position: absolute;
+        bottom: -100%;
+        display: flex;
+        flex-direction: column;
+        left: 0;
+        right: 0;
+    }
+
+    .pokerContainer-seat3 .player1-pot,
+    .pokerContainer-seat3 .player2-pot {
+        position: absolute;
+        left: -30%;
+        right: auto;
+        bottom: 0;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pokerContainer-seat4 {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+        gap: 6px 0px;
+        grid-template-areas:
+            ". player7 . player1 ."
+            "player6 communityCards communityCards communityCards player2"
+            ". communityCards communityCards communityCards ."
+            "player5 communityCards communityCards communityCards player3"
+            ". . player4 . .";
+    }
+
+    .pokerContainer-seat4 .player4-pot {
+        position: absolute;
+        top: -150%;
+        left: 0;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pokerContainer-seat4 .player5-pot,
+    .pokerContainer-seat4 .player6-pot {
+        position: absolute;
+        right: -30%;
+        left: auto;
+        bottom: 0;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pokerContainer-seat4 .player7-pot,
+    .pokerContainer-seat4 .player1-pot {
+        position: absolute;
+        bottom: -100%;
+        display: flex;
+        flex-direction: column;
+        left: 0;
+        right: 0;
+    }
+
+    .pokerContainer-seat4 .player2-pot,
+    .pokerContainer-seat4 .player3-pot {
+        position: absolute;
+        left: -30%;
+        right: auto;
+        bottom: 0;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pokerContainer-seat5 {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+        gap: 6px 0px;
+        grid-template-areas:
+            ". player1 . player2 ."
+            "player7 communityCards communityCards communityCards player3"
+            ". communityCards communityCards communityCards ."
+            "player6 communityCards communityCards communityCards player4"
+            ". . player5 . .";
+    }
+
+    .pokerContainer-seat5 .player5-pot {
+        position: absolute;
+        top: -150%;
+        left: 0;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pokerContainer-seat5 .player6-pot,
+    .pokerContainer-seat5 .player7-pot {
+        position: absolute;
+        right: -30%;
+        left: auto;
+        bottom: 0;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pokerContainer-seat5 .player1-pot,
+    .pokerContainer-seat5 .player2-pot {
+        position: absolute;
+        bottom: -100%;
+        display: flex;
+        flex-direction: column;
+        left: 0;
+        right: 0;
+    }
+
+    .pokerContainer-seat5 .player3-pot,
+    .pokerContainer-seat5 .player4-pot {
+        position: absolute;
+        left: -30%;
+        right: auto;
+        bottom: 0;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pokerContainer-seat6 {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+        gap: 6px 0px;
+        grid-template-areas:
+            ". player2 . player3 ."
+            "player1 communityCards communityCards communityCards player4"
+            ". communityCards communityCards communityCards ."
+            "player7 communityCards communityCards communityCards player5"
+            ". . player6 . .";
+    }
+
+    .pokerContainer-seat6 .player6-pot {
+        position: absolute;
+        top: -150%;
+        left: 0;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pokerContainer-seat6 .player7-pot,
+    .pokerContainer-seat6 .player1-pot {
+        position: absolute;
+        right: -30%;
+        left: auto;
+        bottom: 0;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pokerContainer-seat6 .player2-pot,
+    .pokerContainer-seat6 .player3-pot {
+        position: absolute;
+        bottom: -100%;
+        display: flex;
+        flex-direction: column;
+        left: 0;
+        right: 0;
+    }
+
+    .pokerContainer-seat6 .player4-pot,
+    .pokerContainer-seat6 .player5-pot {
+        position: absolute;
+        left: -30%;
+        right: auto;
+        bottom: 0;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+
+    .pokerContainer-seat7 {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+        gap: 6px 0px;
+        grid-template-areas:
+            ". player3 . player4 ."
+            "player2 communityCards communityCards communityCards player5"
+            ". communityCards communityCards communityCards ."
+            "player1 communityCards communityCards communityCards player6"
+            ". . player7 . .";
+    }
+
+    .pokerContainer-seat7 .player7-pot {
+        position: absolute;
+        top: -150%;
+        left: 0;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pokerContainer-seat7 .player1-pot,
+    .pokerContainer-seat7 .player2-pot {
+        position: absolute;
+        right: -30%;
+        left: auto;
+        bottom: 0;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pokerContainer-seat7 .player3-pot,
+    .pokerContainer-seat7 .player4-pot {
+        position: absolute;
+        bottom: -100%;
+        display: flex;
+        flex-direction: column;
+        left: 0;
+        right: 0;
+    }
+
+    .pokerContainer-seat7 .player5-pot,
+    .pokerContainer-seat7 .player6-pot {
+        position: absolute;
+        left: -30%;
+        right: auto;
+        bottom: 0;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+}
+
+.table6players {
+    .pokerContainer-seat1 {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+        gap: 6px 0px;
+        grid-template-areas:
+            ". . player4 . ."
+            "player3 communityCards communityCards communityCards player5"
+            ". communityCards communityCards communityCards ."
+            "player2 communityCards communityCards communityCards player6"
+            ". . player1 . .";
+    }
+
+    .pokerContainer-seat1 .player1-pot {
+        position: absolute;
+        top: -150%;
+        left: 0;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pokerContainer-seat1 .player2-pot,
+    .pokerContainer-seat1 .player3-pot {
+        position: absolute;
+        right: -30%;
+        left: auto;
+        bottom: 0;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pokerContainer-seat1 .player4-pot {
+        position: absolute;
+        bottom: -100%;
+        display: flex;
+        flex-direction: column;
+        left: 0;
+        right: 0;
+    }
+
+    .pokerContainer-seat1 .player5-pot,
+    .pokerContainer-seat1 .player6-pot {
+        position: absolute;
+        left: -30%;
+        right: auto;
+        bottom: 0;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pokerContainer-seat2 {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+        gap: 6px 0px;
+        grid-template-areas:
+            ". . player5 . ."
+            "player4 communityCards communityCards communityCards player6"
+            ". communityCards communityCards communityCards ."
+            "player3 communityCards communityCards communityCards player1"
+            ". . player2 . .";
+    }
+
+    .pokerContainer-seat2 .player2-pot {
+        position: absolute;
+        top: -150%;
+        left: 0;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pokerContainer-seat2 .player3-pot,
+    .pokerContainer-seat2 .player4-pot {
+        position: absolute;
+        right: -30%;
+        left: auto;
+        bottom: 0;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pokerContainer-seat2 .player5-pot {
+        position: absolute;
+        bottom: -100%;
+        display: flex;
+        flex-direction: column;
+        left: 0;
+        right: 0;
+    }
+
+    .pokerContainer-seat2 .player6-pot,
+    .pokerContainer-seat2 .player1-pot {
+        position: absolute;
+        left: -30%;
+        right: auto;
+        bottom: 0;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+
+    .pokerContainer-seat3 {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+        gap: 6px 0px;
+        grid-template-areas:
+            ". . player6 . ."
+            "player5 communityCards communityCards communityCards player1"
+            ". communityCards communityCards communityCards ."
+            "player4 communityCards communityCards communityCards player2"
+            ". . player3 . .";
+    }
+
+    .pokerContainer-seat3 .player3-pot {
+        position: absolute;
+        top: -150%;
+        left: 0;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pokerContainer-seat3 .player4-pot,
+    .pokerContainer-seat3 .player5-pot {
+        position: absolute;
+        right: -30%;
+        left: auto;
+        bottom: 0;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pokerContainer-seat3 .player6-pot {
+        position: absolute;
+        bottom: -100%;
+        display: flex;
+        flex-direction: column;
+        left: 0;
+        right: 0;
+    }
+
+    .pokerContainer-seat3 .player1-pot,
+    .pokerContainer-seat3 .player2-pot {
+        position: absolute;
+        left: -30%;
+        right: auto;
+        bottom: 0;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pokerContainer-seat4 {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+        gap: 6px 0px;
+        grid-template-areas:
+            ". . player1 . ."
+            "player6 communityCards communityCards communityCards player2"
+            ". communityCards communityCards communityCards ."
+            "player5 communityCards communityCards communityCards player3"
+            ". . player4 . .";
+    }
+
+    .pokerContainer-seat4 .player4-pot {
+        position: absolute;
+        top: -150%;
+        left: 0;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+
+    .pokerContainer-seat4 .player5-pot,
+    .pokerContainer-seat4 .player6-pot {
+        position: absolute;
+        right: -30%;
+        left: auto;
+        bottom: 0;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pokerContainer-seat4 .player1-pot {
+        position: absolute;
+        bottom: -100%;
+        display: flex;
+        flex-direction: column;
+        left: 0;
+        right: 0;
+    }
+
+    .pokerContainer-seat4 .player2-pot,
+    .pokerContainer-seat4 .player3-pot {
+        position: absolute;
+        left: -30%;
+        right: auto;
+        bottom: 0;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pokerContainer-seat5 {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+        gap: 6px 0px;
+        grid-template-areas:
+            ". . player2 . ."
+            "player1 communityCards communityCards communityCards player3"
+            ". communityCards communityCards communityCards ."
+            "player6 communityCards communityCards communityCards player4"
+            ". . player5 . .";
+    }
+
+    .pokerContainer-seat5 .player5-pot {
+        position: absolute;
+        top: -150%;
+        left: 0;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pokerContainer-seat5 .player6-pot,
+    .pokerContainer-seat5 .player1-pot {
+        position: absolute;
+        right: -30%;
+        left: auto;
+        bottom: 0;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pokerContainer-seat5 .player2-pot {
+        position: absolute;
+        bottom: -100%;
+        display: flex;
+        flex-direction: column;
+        left: 0;
+        right: 0;
+    }
+
+    .pokerContainer-seat5 .player3-pot,
+    .pokerContainer-seat5 .player4-pot {
+        position: absolute;
+        left: -30%;
+        right: auto;
+        bottom: 0;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pokerContainer-seat6 {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+        gap: 6px 0px;
+        grid-template-areas:
+            ". . player3 . ."
+            "player2 communityCards communityCards communityCards player4"
+            ". communityCards communityCards communityCards ."
+            "player1 communityCards communityCards communityCards player5"
+            ". . player6 . .";
+    }
+
+    .pokerContainer-seat6 .player6-pot {
+        position: absolute;
+        top: -150%;
+        left: 0;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pokerContainer-seat6 .player1-pot,
+    .pokerContainer-seat6 .player2-pot {
+        position: absolute;
+        right: -30%;
+        left: auto;
+        bottom: 0;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pokerContainer-seat6 .player3-pot {
+        position: absolute;
+        bottom: -100%;
+        display: flex;
+        flex-direction: column;
+        left: 0;
+        right: 0;
+    }
+
+    .pokerContainer-seat6 .player4-pot,
+    .pokerContainer-seat6 .player5-pot {
+        position: absolute;
+        left: -30%;
+        right: auto;
+        bottom: 0;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.table5players {
+    .pokerContainer-seat1 {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+        gap: 6px 0px;
+        grid-template-areas:
+            ". player3 . player4 ."
+            ". communityCards communityCards communityCards ."
+            "player2 communityCards communityCards communityCards player5"
+            ". communityCards communityCards communityCards ."
+            ". . player1 . .";
+    }
+
+    .pokerContainer-seat1 .player1-pot {
+        position: absolute;
+        top: -150%;
+        left: 0;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pokerContainer-seat1 .player2-pot {
+        position: absolute;
+        right: -30%;
+        left: auto;
+        bottom: 0;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pokerContainer-seat1 .player3-pot,
+    .pokerContainer-seat1 .player4-pot {
+        position: absolute;
+        bottom: -100%;
+        display: flex;
+        flex-direction: column;
+        left: 0;
+        right: 0;
+    }
+
+    .pokerContainer-seat1 .player5-pot {
+        position: absolute;
+        left: -30%;
+        right: auto;
+        bottom: 0;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+
+    .pokerContainer-seat2 {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+        gap: 6px 0px;
+        grid-template-areas:
+            ". player4 . player5 ."
+            ". communityCards communityCards communityCards ."
+            "player3 communityCards communityCards communityCards player1"
+            ". communityCards communityCards communityCards ."
+            ". . player2 . .";
+    }
+
+    .pokerContainer-seat2 .player2-pot {
+        position: absolute;
+        top: -150%;
+        left: 0;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pokerContainer-seat2 .player3-pot {
+        position: absolute;
+        right: -30%;
+        left: auto;
+        bottom: 0;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pokerContainer-seat2 .player4-pot,
+    .pokerContainer-seat2 .player5-pot {
+        position: absolute;
+        bottom: -100%;
+        display: flex;
+        flex-direction: column;
+        left: 0;
+        right: 0;
+    }
+
+    .pokerContainer-seat2 .player1-pot {
+        position: absolute;
+        left: -30%;
+        right: auto;
+        bottom: 0;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pokerContainer-seat3 {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+        gap: 6px 0px;
+        grid-template-areas:
+            ". player5 . player1 ."
+            ". communityCards communityCards communityCards ."
+            "player4 communityCards communityCards communityCards player2"
+            ". communityCards communityCards communityCards ."
+            ". . player3 . .";
+    }
+
+
+    .pokerContainer-seat3 .player3-pot {
+        position: absolute;
+        top: -150%;
+        left: 0;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pokerContainer-seat3 .player4-pot {
+        position: absolute;
+        right: -30%;
+        left: auto;
+        bottom: 0;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pokerContainer-seat3 .player5-pot,
+    .pokerContainer-seat3 .player1-pot {
+        position: absolute;
+        bottom: -100%;
+        display: flex;
+        flex-direction: column;
+        left: 0;
+        right: 0;
+    }
+
+    .pokerContainer-seat3 .player2-pot {
+        position: absolute;
+        left: -30%;
+        right: auto;
+        bottom: 0;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pokerContainer-seat4 {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+        gap: 6px 0px;
+        grid-template-areas:
+            ". player1 . player2 ."
+            ". communityCards communityCards communityCards ."
+            "player5 communityCards communityCards communityCards player3"
+            ". communityCards communityCards communityCards ."
+            ". . player4 . .";
+    }
+
+    .pokerContainer-seat4 .player4-pot {
+        position: absolute;
+        top: -150%;
+        left: 0;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pokerContainer-seat4 .player5-pot {
+        position: absolute;
+        right: -30%;
+        left: auto;
+        bottom: 0;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pokerContainer-seat4 .player1-pot,
+    .pokerContainer-seat4 .player2-pot {
+        position: absolute;
+        bottom: -100%;
+        display: flex;
+        flex-direction: column;
+        left: 0;
+        right: 0;
+    }
+
+    .pokerContainer-seat4 .player3-pot {
+        position: absolute;
+        left: -30%;
+        right: auto;
+        bottom: 0;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pokerContainer-seat5 {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+        gap: 6px 0px;
+        grid-template-areas:
+            ". player2 . player3 ."
+            ". communityCards communityCards communityCards ."
+            "player1 communityCards communityCards communityCards player4"
+            ". communityCards communityCards communityCards ."
+            ". . player5 . .";
+    }
+
+    .pokerContainer-seat5 .player5-pot {
+        position: absolute;
+        top: -150%;
+        left: 0;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pokerContainer-seat5 .player1-pot {
+        position: absolute;
+        right: -30%;
+        left: auto;
+        bottom: 0;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pokerContainer-seat5 .player2-pot,
+    .pokerContainer-seat5 .player3-pot {
+        position: absolute;
+        bottom: -100%;
+        display: flex;
+        flex-direction: column;
+        left: 0;
+        right: 0;
+    }
+
+    .pokerContainer-seat5 .player4-pot {
+        position: absolute;
+        left: -30%;
+        right: auto;
+        bottom: 0;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+}
+
+.table4players {
+    .pokerContainer-seat1 {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+        gap: 6px 0px;
+        grid-template-areas:
+            ". . player3 . ."
+            ". communityCards communityCards communityCards ."
+            "player2 communityCards communityCards communityCards player4"
+            ". communityCards communityCards communityCards ."
+            ". . player1 . .";
+    }
+
+    .pokerContainer-seat1 .player1-pot {
+        position: absolute;
+        top: -150%;
+        left: 0;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pokerContainer-seat1 .player2-pot {
+        position: absolute;
+        right: -30%;
+        left: auto;
+        bottom: 0;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pokerContainer-seat1 .player3-pot {
+        position: absolute;
+        bottom: -100%;
+        display: flex;
+        flex-direction: column;
+        left: 0;
+        right: 0;
+    }
+
+    .pokerContainer-seat1 .player4-pot {
+        position: absolute;
+        left: -30%;
+        right: auto;
+        bottom: 0;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pokerContainer-seat2 {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+        gap: 6px 0px;
+        grid-template-areas:
+            ". . player4 . ."
+            ". communityCards communityCards communityCards ."
+            "player3 communityCards communityCards communityCards player1"
+            ". communityCards communityCards communityCards ."
+            ". . player2 . .";
+    }
+
+    .pokerContainer-seat2 .player2-pot {
+        position: absolute;
+        top: -150%;
+        left: 0;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pokerContainer-seat2 .player3-pot {
+        position: absolute;
+        right: -30%;
+        left: auto;
+        bottom: 0;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pokerContainer-seat2 .player4-pot {
+        position: absolute;
+        bottom: -100%;
+        display: flex;
+        flex-direction: column;
+        left: 0;
+        right: 0;
+    }
+
+    .pokerContainer-seat2 .player1-pot {
+        position: absolute;
+        left: -30%;
+        right: auto;
+        bottom: 0;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pokerContainer-seat3 {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+        gap: 6px 0px;
+        grid-template-areas:
+            ". . player1 . ."
+            ". communityCards communityCards communityCards ."
+            "player4 communityCards communityCards communityCards player2"
+            ". communityCards communityCards communityCards ."
+            ". . player3 . .";
+    }
+
+    .pokerContainer-seat3 .player3-pot {
+        position: absolute;
+        top: -150%;
+        left: 0;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pokerContainer-seat3 .player4-pot {
+        position: absolute;
+        right: -30%;
+        left: auto;
+        bottom: 0;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pokerContainer-seat3 .player1-pot {
+        position: absolute;
+        bottom: -100%;
+        display: flex;
+        flex-direction: column;
+        left: 0;
+        right: 0;
+    }
+
+    .pokerContainer-seat3 .player2-pot {
+        position: absolute;
+        left: -30%;
+        right: auto;
+        bottom: 0;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+
+    .pokerContainer-seat4 {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+        gap: 6px 0px;
+        grid-template-areas:
+            ". . player2 . ."
+            ". communityCards communityCards communityCards ."
+            "player1 communityCards communityCards communityCards player3"
+            ". communityCards communityCards communityCards ."
+            ". . player4 . .";
+    }
+
+    .pokerContainer-seat4 .player4-pot {
+        position: absolute;
+        top: -150%;
+        left: 0;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pokerContainer-seat4 .player1-pot {
+        position: absolute;
+        right: -30%;
+        left: auto;
+        bottom: 0;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pokerContainer-seat4 .player2-pot {
+        position: absolute;
+        bottom: -100%;
+        display: flex;
+        flex-direction: column;
+        left: 0;
+        right: 0;
+    }
+
+    .pokerContainer-seat4 .player3-pot {
+        position: absolute;
+        left: -30%;
+        right: auto;
+        bottom: 0;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+}
+
+.table3players {
+    .pokerContainer-seat1 {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+        gap: 6px 0px;
+        grid-template-areas:
+            ". . . . ."
+            ". communityCards communityCards communityCards ."
+            "player2 communityCards communityCards communityCards player3"
+            ". communityCards communityCards communityCards ."
+            ". . player1 . .";
+    }
+
+    .pokerContainer-seat1 .player1-pot {
+        position: absolute;
+        top: -150%;
+        left: 0;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pokerContainer-seat1 .player2-pot {
+        position: absolute;
+        right: -30%;
+        left: auto;
+        bottom: 0;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pokerContainer-seat1 .player3-pot {
+        position: absolute;
+        left: -30%;
+        right: auto;
+        bottom: 0;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pokerContainer-seat2 {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+        gap: 6px 0px;
+        grid-template-areas:
+            ". . . . ."
+            ". communityCards communityCards communityCards ."
+            "player3 communityCards communityCards communityCards player1"
+            ". communityCards communityCards communityCards ."
+            ". . player2 . .";
+    }
+
+    .pokerContainer-seat2 .player2-pot {
+        position: absolute;
+        top: -150%;
+        left: 0;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pokerContainer-seat2 .player3-pot {
+        position: absolute;
+        right: -30%;
+        left: auto;
+        bottom: 0;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pokerContainer-seat2 .player1-pot {
+        position: absolute;
+        left: -30%;
+        right: auto;
+        bottom: 0;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+
+    .pokerContainer-seat3 {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+        gap: 6px 0px;
+        grid-template-areas:
+            ". . . . ."
+            ". communityCards communityCards communityCards ."
+            "player1 communityCards communityCards communityCards player2"
+            ". communityCards communityCards communityCards ."
+            ". . player3 . .";
+    }
+
+    .pokerContainer-seat3 .player3-pot {
+        position: absolute;
+        top: -150%;
+        left: 0;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pokerContainer-seat3 .player1-pot {
+        position: absolute;
+        right: -30%;
+        left: auto;
+        bottom: 0;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pokerContainer-seat3 .player2-pot {
+        position: absolute;
+        left: -30%;
+        right: auto;
+        bottom: 0;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+}
+
+.table2players {
+    .pokerContainer-seat1 {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+        gap: 6px 0px;
+        grid-template-areas:
+            ". . player2 . ."
+            ". communityCards communityCards communityCards ."
+            ". communityCards communityCards communityCards ."
+            ". communityCards communityCards communityCards ."
+            ". . player1 . .";
+    }
+
+    .pokerContainer-seat1 .player1-pot {
+        position: absolute;
+        top: -150%;
+        left: 0;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pokerContainer-seat1 .player2-pot {
+        position: absolute;
+        bottom: -100%;
+        display: flex;
+        flex-direction: column;
+        left: 0;
+        right: 0;
+    }
+
+    .pokerContainer-seat2 {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+        gap: 6px 0px;
+        grid-template-areas:
+            ". . player1 . ."
+            ". communityCards communityCards communityCards ."
+            ". communityCards communityCards communityCards ."
+            ". communityCards communityCards communityCards ."
+            ". . player2 . .";
+    }
+
+    .pokerContainer-seat2 .player2-pot {
+        position: absolute;
+        top: -150%;
+        left: 0;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pokerContainer-seat2 .player1-pot {
+        position: absolute;
+        bottom: -100%;
+        display: flex;
+        flex-direction: column;
+        left: 0;
+        right: 0;
+    }
+}
+
+
+.communityCards {
+    grid-area: communityCards;
+}
+
+.player1 {
+    grid-area: player1;
+}
+
+.player2 {
+    grid-area: player2;
+}
+
+.player3 {
+    grid-area: player3;
+}
+
+.player4 {
+    grid-area: player4;
+}
+
+.player5 {
+    grid-area: player5;
+}
+
+.player6 {
+    grid-area: player6;
+}
+
+.player7 {
+    grid-area: player7;
+}
+
+.player8 {
+    grid-area: player8;
+}
+
+.player9 {
+    grid-area: player9;
+}
+
+.player10 {
+    grid-area: player10;
+}
+
+.potContainer {
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+
+@media (max-width: 1000px) {
+    .potContainer {
+        grid-column-start: 2;
+        grid-column-end: 5;
+        grid-row-start: 2;
+        grid-row-end: 3;
+    }
+}
+
+/*  */
+
+.poker-table {
+    height: 100%;
+    width: 100%;
+}
+
+.poker-table-10 {
+    display: grid;
+    grid-template-areas:
+        '. seat-4 seat-5 seat-6 .'
+        'seat-3 . . . seat-7'
+        'seat-2 . . . seat-8'
+        '. seat-1 seat-0 seat-9 .';
+    grid-gap: 10px;
+}
+
+.poker-table-8 {
+    display: grid;
+    grid-template-areas:
+        '. seat-3 seat-4 seat-5 .'
+        'seat-2 . . . seat-6'
+        '. seat-1 seat-0 seat-7 .';
+    grid-gap: 10px;
+}
+
+.poker-table-6 {
+    display: grid;
+    grid-template-areas:
+        'seat-2 seat-3 seat-4'
+        '. . .'
+        '. . .'
+        'seat-1 seat-0 seat-5';
+    grid-gap: 10px;
+}
+
+.poker-table-4 {
+    display: grid;
+    grid-template-areas:
+    '. seat-2 .'
+    'seat-1 . seat-3'
+    '. seat-0 .';
+    grid-gap: 10px;
+}
+
+.poker-table-2 {
+    display: grid;
+    grid-template-areas:
+        'seat-1'
+        '.'
+        '.'
+        'seat-0';
+    grid-gap: 10px;
+}

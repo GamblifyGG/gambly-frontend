@@ -1,0 +1,52 @@
+:root {
+  --header-h: 80px;
+  --header-h-sm: 60px;
+  --header-el-h: 46px;
+  --header-el-h-sm: 30px;
+  --header-aside-w: 80px;
+  --cont-pad: 30px;
+  --cont-pad-sm: 15px;
+  --primary: #FFA843;
+  --secondary: #28B761;
+  --dark: #13141B;
+  --dark-700: #111318;
+  --grad-secondary: linear-gradient(155deg, #28B761 8.97%, #006F2C 78.53%);
+  --grad-primary: linear-gradient(180deg, #FFA843 0%, #E88E26 100%);
+  --grad-primary-l: linear-gradient(180deg, #fab25f 0%, #e99638 100%);
+  --grad-dark: linear-gradient(120deg, #292B31 20.34%, #181921 91.82%);
+  --grad-dark-300: linear-gradient(93deg, #434652 4.8%, #272933 100.93%);
+  --br: 18px;
+  --br-sm: 15px;
+  --br-lg: 38px;
+  --br-xl: 44px;
+  --br-sm: 10px;
+  --br-xs: 6px;
+}
+
+.grad-purp {
+  background: linear-gradient(180deg, #AF70FF 0%, #7E24F0 100%);
+}
+
+.grad-secondary {
+  background: var(--grad-secondary)
+}
+
+.grad-secondary-v {
+  background: linear-gradient(180deg, #28B761 0%, #099641 100%)
+}
+
+.grad-primary {
+  background: var(--grad-primary);
+
+  &.btn:hover {
+    background: var(--grad-primary-l);
+  }
+}
+
+.grad-dark {
+  background: var(--grad-dark)
+}
+
+.grad-dark-300 {
+  background: var(--grad-dark-300)
+}

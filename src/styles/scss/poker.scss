@@ -1,0 +1,15 @@
+.poker-buttons {
+  @include bp-up(lg) {
+    position: fixed;
+    bottom: 44px;
+    left: 0;
+    right: 0;
+    display: table;
+    margin: 0 auto;
+    width: auto;
+
+    .btn {
+      width: 198px;
+    }
+  }
+}

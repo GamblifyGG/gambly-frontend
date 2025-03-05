@@ -1,0 +1,374 @@
+body,
+html {
+  background: var(--dark-700);
+  color: #BEC2D1;
+  font-size: 13px;
+
+  @include bp-up(lg) {
+    font-size: 16px;
+  }
+}
+
+main {
+  @include bp-down(lg) {
+    padding-bottom: 20px
+  }
+}
+
+h1,
+h2,
+h3 {
+  color: #fff
+}
+
+p {
+  line-height: 168.75%
+}
+
+.cont {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1860px;
+  padding-left: var(--cont-pad-sm);
+  padding-right: var(--cont-pad-sm);
+
+  @include bp-up(lg) {
+    padding-left: var(--cont-pad);
+    padding-right: var(--cont-pad);
+  }
+}
+
+.linear-top-to-bottom {
+  background: linear-gradient(180deg, #1D1F27 0%, rgba(19, 20, 27, 0.95) 100%);
+}
+.linear-left-to-right {
+  background: linear-gradient(90deg, rgba(22, 24, 32, 0.95) -0.07%, rgba(29, 30, 39, 0.95) 100%);
+}
+
+#header {
+  background: linear-gradient(90deg, rgba(22, 24, 32, 0.95) -0.07%, rgba(29, 30, 39, 0.95) 100%);
+  box-shadow: 0px 0px 22.883px 0px rgba(0, 0, 0, 0.26);
+
+  .header-top {
+    height: var(--header-h-sm);
+    gap: 10px;
+  }
+
+  .header-brand {
+    img {
+      height: var(--header-el-h-sm);
+      width: auto;
+    }
+  }
+
+  @include bp-down(lg) {
+    .header-collapse {
+      display: none;
+      padding-bottom: 2rem;
+
+      .cont>div+div {
+        margin-top: 2rem
+      }
+    }
+
+    .header-search input {
+      height: 38px;
+      border-radius: 38px;
+    }
+
+    .header-collapse-bottom {
+      ._right {
+        a {
+          opacity: 0.3;
+
+          svg {
+            height: 17px;
+          }
+
+          &:hover {
+            opacity: 1
+          }
+        }
+
+      }
+    }
+
+    .header-collapse-mid {
+      a>div {
+        width: 34px;
+      }
+
+      a {
+        padding: 1rem 0;
+        position: relative;
+
+        &:after {
+          content: '';
+          display: none;
+          width: 12px;
+          height: 12px;
+          background: var(--primary);
+          position: absolute;
+          right: 0;
+          top: 0;
+          bottom: 0;
+          margin: auto 0 auto 0;
+          border-radius: 50%;
+        }
+
+        &.active {
+
+          span,
+          svg {
+            opacity: 0.3
+          }
+
+          &:after {
+            display: block;
+          }
+        }
+      }
+
+      svg {
+        height: 2rem;
+      }
+    }
+
+    &.is-open {
+      height: auto;
+
+      .header-collapse {
+        display: block
+      }
+    }
+  }
+
+  @include bp-up(lg) {
+    .header-top {
+      height: var(--header-h);
+    }
+
+    .header-brand img {
+      height: var(--header-el-h);
+    }
+  }
+}
+
+.header-search {
+  input {
+    height: var(--header-el-h-sm);
+    padding-left: 50px;
+    width: 100%;
+    border-radius: 15px;
+  }
+
+  ._icon {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    left: 10px;
+    height: 16px;
+  }
+
+  @include bp-up(lg) {
+    input {
+      height: var(--header-el-h);
+      border-radius: 23px;
+    }
+
+    ._icon {
+      height: 19px;
+    }
+  }
+}
+
+.header-user {
+  height: var(--header-el-h-sm);
+  gap: 10px;
+  // padding: 0 4px 0 1em;
+
+  ._icon {
+    height: 16px;
+  }
+
+  ._avatar {
+    height: 21px;
+  }
+
+  @include bp-up(lg) {
+    height: var(--header-el-h);
+    // padding: 0 6px 0 1em;
+
+    ._icon {
+      height: 18px;
+    }
+
+    ._avatar {
+      height: 34px;
+    }
+  }
+}
+
+.casino-layout {
+  height: 100%;
+
+  main {
+    min-height: calc(100vh - 100px);
+  }
+
+  #__next {
+    height: 100%;
+    // display: grid;
+    // grid-template-rows: auto 1fr auto;
+  }
+
+  @include bp-up(lg) {
+    padding-left: var(--header-aside-w);
+    padding-top: var(--header-h);
+
+    main {
+      min-height: calc(100vh - (var(--header-h) + 112px));
+      display: flex;
+      overflow-y: auto;
+      // padding-top: var(--cont-pad);
+    }
+
+    mainpokerpage {
+      min-height: calc(100vh - (var(--header-h) - 100px));
+      display: flex;
+      overflow-y: auto;
+      > #__next {
+        grid-template-rows: auto 1fr !important; 
+      }
+      // padding-top: var(--cont-pad);
+    }
+
+    #header {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      z-index: 90
+    }
+
+    .cont {
+      margin-left: 0;
+      height: 100%;
+      width: 100%;
+      flex-grow: 1;
+    }
+
+    .header-top {
+      padding-left: 0;
+
+      .header-left {
+        width: var(--header-aside-w);
+        display: flex;
+        justify-content: center;
+      }
+    }
+
+    .header-collapse {
+      display: block;
+      width: var(--header-aside-w);
+      height: calc(100vh - var(--header-h));
+      top: var(--header-h);
+      position: absolute;
+      left: 0;
+      background: linear-gradient(180deg, #1D1F27 0%, rgba(19, 20, 27, 0.95) 100%);
+
+      .cont {
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        align-items: center;
+      }
+    }
+
+    .header-collapse-top,
+    .header-search {
+      display: none
+    }
+
+    .header-collapse-mid {
+      margin-top: 2em;
+      gap: 6px;
+
+      div {
+        width: auto;
+      }
+
+      span {
+        display: none;
+      }
+    }
+
+    .header-collapse-bottom {
+      margin-top: auto;
+
+      ._left {
+        display: none
+      }
+
+      ._right {
+        margin-bottom: 1em;
+      }
+    }
+
+    .header-menu {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+
+      a {
+        border-radius: 15px;
+        width: 49px;
+        height: 49px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+
+        &:after {
+          content: '';
+          display: none;
+          width: 12px;
+          height: 12px;
+          background: var(--primary);
+          position: absolute;
+          left: 100%;
+          top: 0;
+          bottom: 0;
+          margin: auto 0 auto 8px;
+          border-radius: 50%;
+        }
+
+        div {
+          width: auto;
+        }
+
+        &:hover {
+          background: rgba(#373A46, 0.3)
+        }
+
+        &.active {
+          background: #373A46;
+
+          &:after {
+            display: block;
+          }
+        }
+      }
+    }
+  }
+}
+
+.casino-hero_ {
+  background: linear-gradient(to left, rgba(#13141B, 0), rgba(#13141B, 1)), url('/casino2.png') 274.503px -392.355px / 80.152% 270.9% no-repeat;
+}
+
+.modal-open {
+  overflow: hidden;
+}

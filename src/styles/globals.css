@@ -1,0 +1,217 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ===== Scrollbar CSS ===== */
+/* Firefox */
+* {
+  scrollbar-width: none;
+  scrollbar-color: #141920 #202633;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  padding-right: 1px;
+  width: 4px;
+}
+
+*::-webkit-scrollbar-track {
+  /* background: #202633; */
+  background: #141920;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #202633;
+  border-radius: 3px;
+  /* border: 3px none #ffffff; */
+}
+
+
+.winner-bg {
+  box-shadow: 0px 0px 20px 0px rgba(53,146,96,1);
+  -webkit-box-shadow: 0px 0px 20px 0px rgba(53,146,96,1);
+  -moz-box-shadow: 0px 0px 20px 0px rgba(53,146,96,1);
+}
+
+/* Gradient Range Slider */
+#range-slider-gradient {
+  height: 10px;
+  border-radius: 12px;
+  background: #353644;
+}
+
+#range-slider-gradient .range-slider__thumb {
+  border: 3px solid #fff;
+  height: 15px;
+  width: 15px;
+  box-sizing: border-box;
+}
+
+#range-slider-gradient .range-slider__thumb[data-lower] {
+  background: #28b660;
+  border: 0px solid #fff;
+  /* border; */
+  height: 10px;
+  width: 10px;
+  margin-left: -5px;
+  display: none;
+  /* margin-left: -100px; */
+}
+
+.arrow-left {
+  width: 0;
+  height: 0;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-right: 5px solid #28b660;
+}
+
+#range-slider-gradient .range-slider__thumb[data-upper] {
+  background: #28b660;
+}
+
+#range-slider-gradient .range-slider__range {
+  background: linear-gradient(to right, #28b660, #ffa844);
+  background-size: 200% 100%;
+  background-position: 50% 0;
+  margin-left: -4px;
+  border-radius: 12px;
+}
+
+#range-slider-gradient .range-slider__range[data-active],
+#range-slider-gradient .range-slider__thumb[data-active]~.range-slider__range {
+  animation: move-bg 0.75s infinite linear;
+}
+
+@keyframes move-bg {
+  0% {
+    background-position: 50% 0;
+  }
+
+  25% {
+    background-position: 100% 0;
+  }
+
+  50% {
+    background-position: 50% 0;
+  }
+
+  75% {
+    background-position: 0% 0;
+  }
+
+  100% {
+    background-position: 50% 0;
+  }
+}
+
+
+.card-zoom {
+  @apply relative flex items-center justify-center overflow-hidden;
+  -webkit-mask-image: radial-gradient(white, black);
+}
+
+.card-zoom-image {
+  @apply absolute w-full h-full transition-all duration-500 ease-in-out transform bg-center bg-cover;
+  /* background-image: url('/game_images/coinflip.webp'); */
+}
+
+.card-zoom-text {
+  @apply absolute font-black select-none transition-all duration-500 ease-in-out transform scale-150 opacity-60;
+}
+
+.card-zoom:hover .card-zoom-image {
+  @apply scale-150;
+  cursor: pointer;
+}
+
+.card-zoom:hover .card-zoom-text {
+  @apply scale-100 opacity-100;
+  @apply text-gold;
+  cursor: pointer;
+}
+
+/* Custom styles for the coin */
+.coin {
+  @apply bg-no-repeat bg-center;
+  background-image: url('/game_images/coinflip-t.png');
+  background-size: 100% 2000%;
+  background-position: 0 0;
+  /* Path to your sprite image */
+}
+
+@keyframes flip {
+  from {
+    background-position: 0 -100%;
+  }
+
+  to {
+    background-position: 0 100%;
+  }
+}
+
+.coin {
+  animation: flip 4s steps(400) infinite;
+}
+
+#__next,
+body,
+html {
+  height: 100%;
+  width: 100%;
+}
+
+:root {
+  height: 100%;
+  --foreground-rgb: 0, 0, 0;
+  padding: 0;
+  margin: 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+/* body {
+  height: 100%;
+  color: rgb(var(--foreground-rgb));
+  padding: 0;
+  margin: 0;
+  background: linear-gradient(to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+} */
+
+
+
+.linear-gradient-dark {
+  /* border-radius: 40px 40px 0px 0px; */
+  background: linear-gradient(180deg, #222731 0%, rgba(53, 56, 67, 0.00) 100%);
+}
+
+.linear-gradient-darkgold {
+  background: linear-gradient(130deg, #141920 28.46%, #483E19 85.25%, #755C09 98.34%);
+}
+
+.gradient-fadeout {
+  background: rgb(2, 0, 36);
+  background: linear-gradient(176deg, rgba(2, 0, 36, 0) 0%, rgba(32, 38, 51, 1) 100%);
+}
+
+.gradient-casino-menu {
+  background: rgb(254, 190, 0);
+  background: -moz-linear-gradient(90deg, rgba(254, 190, 0, 0) 0%, rgba(254, 190, 0, 0.506061799719888) 100%);
+  background: -webkit-linear-gradient(90deg, rgba(254, 190, 0, 0) 0%, rgba(254, 190, 0, 0.506061799719888) 100%);
+  background: linear-gradient(90deg, rgba(254, 190, 0, 0) 0%, rgba(254, 190, 0, 0.506061799719888) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#febe00", endColorstr="#febe00", GradientType=1);
+}
+
+.anim-delay-1000 {
+  animation-delay: 1000ms;
+}

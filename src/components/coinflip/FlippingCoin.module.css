@@ -1,0 +1,52 @@
+.coinContainer {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.coin {
+    width: 80px;
+    height: 105px;
+    background-image: url('/images/coin-sprite.png');
+    background-size: 80px 4096px;
+    background-position: 0 -3px; /* Slight offset to crop top */
+    background-repeat: no-repeat;
+    position: absolute;
+    transform-style: preserve-3d;
+    clip-path: inset(4px 0 1px 0); /* Adjusted to show more of the bottom */
+}
+
+.flipping {
+    animation: coinflip-sprite 3s steps(51) infinite, coinflip-rotate 3s ease-in-out infinite, coinflip-move 3s ease-in-out infinite;
+}
+
+@keyframes coinflip-sprite {
+    to {
+        background-position: 0 -4085px; /* Adjusted to account for cropping */
+    }
+}
+
+@keyframes coinflip-rotate {
+    0% {
+        transform: rotate3d(0, 0, 1, 0);
+    }
+    100% {
+        transform: rotate3d(0, 0, 1, 720deg);
+    }
+}
+
+@keyframes coinflip-move {
+    0% {
+        transform: translateZ(0);
+    }
+    50% {
+        transform: translate3d(0, 10px, 20px);
+    }
+    100% {
+        transform: translateZ(0);
+    }
+}

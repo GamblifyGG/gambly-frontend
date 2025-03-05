@@ -1,0 +1,34 @@
+# docs
+**/*.md
+
+# git stuff
+.git
+.gitattributes
+.gitmessage
+.gitignore
+.github
+
+# docker
+Dockerfile
+apps/*/Dockerfile
+docker-compose.yml
+.containerignore
+.dockerignore
+
+# root node_modules and in packages
+node_modules
+**/node_modules
+
+# env files
+**/.env
+**/.env.example
+
+# kubernetes manifests
+apps/*/kubernetes
+
+# trash
+npm-debug.log
+
+# next.js builds
+apps/*/.next
+
