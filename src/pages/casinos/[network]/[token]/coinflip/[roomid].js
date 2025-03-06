@@ -72,7 +72,7 @@ const CoinFlipRoom = () => {
     useEffect(() => {
         if (!fetchedGame) return
 
-        sock.current = io('wss://staging.gambly.io', {
+        sock.current = io(process.env.NEXT_PUBLIC_WSS_URL, {
             path: '/coinflip-api',
             transports: ['websocket'],
             query: { room: roomid },

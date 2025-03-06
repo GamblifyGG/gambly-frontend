@@ -1,7 +1,7 @@
 const path = require('path');
 
 const nextConfig = {
-  output: 'standalone',
+  // output: 'standalone',
   experimental: {
     // todo: for a monorepo scenario
     // not needed when using `pnpm deploy`
