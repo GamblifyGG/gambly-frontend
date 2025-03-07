@@ -27,7 +27,7 @@ export const BalanceAlerts = () => {
     console.log('[MSSE] init...')
     const headers = { Authorization: `Bearer ${token}` };
     
-    fetchEventSource(`${process.env.NEXT_PUBLIC_API_URL}/user/balances/${chainId}/live?include_token_data=true`, {
+    fetchEventSource(`${process.env.NEXT_PUBLIC_API_URL}user/balances/${chainId}/live?include_token_data=true`, {
       headers,
       signal: controllerRef.current.signal,
       onopen() {

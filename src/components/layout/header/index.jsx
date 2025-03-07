@@ -55,7 +55,7 @@ const ToolKit = () => {
 
   return (
     <div className="flex items-center gap-5">
-      <Button href={`casinos/ethereum`} className="hidden hover:opacity-75 hover:animate-pulse transition-all md:flex">Browse Casinos</Button>
+      <Button href={`casinos`} className="hidden hover:opacity-75 hover:animate-pulse transition-all md:flex">Browse Casinos</Button>
       <Menu
         onClick={() => toggleFeatureFlag("isOpenMenu")}
         className="flex md:hidden"
