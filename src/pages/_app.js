@@ -22,7 +22,7 @@ import { ToastContainer } from 'react-toastify';
 // import { SolanaAdapter } from '@reown/appkit-adapter-solana'
 
 export default function App({ Component, pageProps }) {
-  const network = WalletAdapterNetwork.Devnet;
+  const network = WalletAdapterNetwork.Mainnet;
   const endpoint = useMemo(() => clusterApiUrl(network), [network]);
   const wallets = useMemo(
     () => [
