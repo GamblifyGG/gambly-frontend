@@ -78,7 +78,7 @@ const CoinFlipRoom = () => {
         if (!fetchedGame) return
         if (game?.ended != null) return
 
-        sock.current = io('wss://staging.gambly.io', {
+        sock.current = io(process.env.NEXT_PUBLIC_WSS_URL, {
             path: '/rps-api',
             transports: ['websocket'],
             query: { room: roomid },

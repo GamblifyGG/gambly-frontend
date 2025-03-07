@@ -71,7 +71,7 @@ const CoinFlipRoom = () => {
 
     useEffect(() => {
         if (!fetchedGame) return
-
+        console.log('[Socket]', process.env.NEXT_PUBLIC_WSS_URL)
         sock.current = io(process.env.NEXT_PUBLIC_WSS_URL, {
             path: '/coinflip-api',
             transports: ['websocket'],

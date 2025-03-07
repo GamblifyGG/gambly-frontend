@@ -401,7 +401,7 @@ const Poker = () => {
     const { room } = router.query
     const token = userAuth?.token
 
-    sock.current = io("wss://staging.gambly.io", {
+    sock.current = io(process.env.NEXT_PUBLIC_WSS_URL, {
         path: "/poker-api",
         transports: ["websocket"],
         query: { room },

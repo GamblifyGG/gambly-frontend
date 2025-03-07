@@ -41,7 +41,7 @@ const CreateGameModal = ({ showModal, setShowModal, token, onNewGame = () => {} 
 
     const autoJoin = async (roomid, bet, password) => {
       console.log('[Auto Join]', 'connecting...')
-      const sock = io('wss://staging.gambly.io', {
+      const sock = io(process.env.NEXT_PUBLIC_WSS_URL, {
           path: '/rps-api',
           transports: ['websocket'],
           query: { room: roomid },

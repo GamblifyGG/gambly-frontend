@@ -957,6 +957,7 @@ const Poker = () => {
 
         // Auth event so reconnect
         if (sock.current && userAuth) {
+            console.log('closing socket')
             sock.current.close();
             sock.current.disconnect();
             sock.current = null
@@ -967,7 +968,7 @@ const Poker = () => {
         const token = userAuth?.token
         devLog('[Socket AUTH]', userAuth)
 
-        sock.current = io('wss://staging.gambly.io', {
+        sock.current = io(process.env.NEXT_PUBLIC_WSS_URL, {
             path: '/poker-api',
             transports: ['websocket'],
             query: { room },

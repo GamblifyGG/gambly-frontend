@@ -74,6 +74,7 @@ const nextConfig = {
     NEXT_PUBLIC_COMPANY_NAME: process.env.NEXT_PUBLIC_COMPANY_NAME,
     NEXT_PUBLIC_COMPANY_NUMBER: process.env.NEXT_PUBLIC_COMPANY_NUMBER,
     NEXT_PUBLIC_COMPANY_ADDRESS: process.env.NEXT_PUBLIC_COMPANY_ADDRESS,
+    NEXT_PUBLIC_WSS_URL: process.env.NEXT_PUBLIC_WSS_URL,
   },
   sassOptions: {
     includePaths: [path.join(__dirname, 'src', 'styles')],

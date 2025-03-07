@@ -17,10 +17,10 @@ function createSiweMessage(chainId, address, statement, nonce) {
   devLog("[createSiweMessage]", chainId)
   const message = new SiweMessage({
     scheme: 'https',
-    domain: 'staging.gambly.io',
+    domain: process.env.NEXT_PUBLIC_WEBSITE_NAME,
     address,
     statement,
-    uri: 'https://staging.gambly.io',
+    uri: process.env.NEXT_PUBLIC_WEBSITE_LINK,
     version: '1',
     chainId,
     nonce
@@ -250,7 +250,7 @@ export const BaseProvider = ({ children }) => {
     try {
       const referral_code = localStorage.getItem("REF")
 
-      const r = await fetch('https://staging.gambly.io/api/v1/auth/login', {
+      const r = await fetch(`${process.env.NEXT_PUBLIC_API_URL}auth/login`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -293,7 +293,7 @@ export const BaseProvider = ({ children }) => {
 
   const getNonce = async (walletToGetNonceFor) => {
     return new Promise(async (resolve, reject) => {
-      const n = await fetch('https://staging.gambly.io/api/v1/auth/nonce', {
+      const n = await fetch(`${process.env.NEXT_PUBLIC_API_URL}auth/nonce`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -336,10 +336,10 @@ export const BaseProvider = ({ children }) => {
     return new Promise(async (resolve, reject) => {
       const nonce = await getNonce(String(solanaWallet.adapter.publicKey))
       const message = createSiweMessageSolana(
-        'staging.gambly.io',
+        process.env.NEXT_PUBLIC_WEBSITE_NAME,
         solanaWallet.adapter.publicKey,
         'gm wagmi frens',
-        'https://staging.gambly.io',
+        process.env.NEXT_PUBLIC_WEBSITE_LINK,
         '1',
         nonce
       )
