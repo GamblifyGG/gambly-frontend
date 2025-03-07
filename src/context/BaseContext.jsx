@@ -125,10 +125,10 @@ export const BaseProvider = ({ children }) => {
   const [isConnected, setIsConnected] = useState(false);
   // const [isConnecting, setIsConnecting] = useState(false);
   const [networks, setNetworks] = useState([
-    { name: 'ethereum', id: 1, symbol: 'eth', logo: '/networks/ethereum.svg' },
+    // { name: 'ethereum', id: 1, symbol: 'eth', logo: '/networks/ethereum.svg' },
     { name: 'solana', id: 101, symbol: 'sol', logo: '/networks/solana.png' },
-    { name: 'sepolia', id: 11155111, symbol: 'spo', logo: '/networks/sepolia.png' },
-    { name: 'BSC', id: 56, symbol: 'bsc', logo: '/networks/bsc.png' },
+    // { name: 'sepolia', id: 11155111, symbol: 'spo', logo: '/networks/sepolia.png' },
+    { name: 'bsc', id: 56, symbol: 'bsc', logo: '/networks/bsc.png' },
   ])
   const [network, setNetwork] = useState(null)
   const [networkTokens, setNetworkTokens] = useState({ tokens: [], total: 0 })
