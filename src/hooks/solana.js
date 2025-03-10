@@ -1,9 +1,13 @@
 import { useEffect, useState } from "react";
 import {  useAnchorWallet, useConnection } from '@solana/wallet-adapter-react';
 import * as anchor from '@coral-xyz/anchor';
+import { toast } from 'react-toastify'
 import {
   PublicKey,
 } from '@solana/web3.js';
+
+const IDL = require('@/data/casino_bank.json')
+
 
 function isValidSolanaAddress(address) {
   try {
@@ -18,8 +22,15 @@ export function useSolanaContract(deposit_contract_address = null, tokenState = 
   const wallet = useAnchorWallet();
   const { connection } = useConnection();
   const [program, setProgram] = useState(null);
-  const [owner, setOwner] = useState(null);
-  const provider = new anchor.AnchorProvider(connection, wallet, { preflightCommitment: 'processed' });
+  const [owner, setOwner] = useState(process.env.NEXT_PUBLIC_SOLANA_OWNER);
+  console.log("[SOLANA] OWNER", owner)
+  let provider = null;
+  // use custom provider
+  try {
+    provider = new anchor.AnchorProvider(connection, wallet, { preflightCommitment: 'processed' });
+  } catch (error) {
+    console.log('[SOLANA: PROVIDER ERROR]', error)
+  }
 
   useEffect(() => {
     console.log('[SOLANA: PROGRAM SET]', program)
@@ -31,20 +42,50 @@ export function useSolanaContract(deposit_contract_address = null, tokenState = 
 
   const fetchProgram = async (contract_address) => {
     console.log('[SOLANA CON]', provider, connection)
-    if (!isValidSolanaAddress(contract_address)) return
+    if (!isValidSolanaAddress(contract_address)) {
+      toast.error('Invalid contract address. Please try again.', {
+        bodyClassName: 'text-xs'
+      })
+      return
+    }
     
     const programId = new PublicKey(contract_address)
-    console.log(contract_address)
-
-    // fetch idl, instantiate program
-    const idl = await anchor.Program.fetchIdl(programId, provider);
-    console.log('[IDL]', idl)
-    const program = new anchor.Program(idl, provider);
-    setProgram(program);
+    console.log(contract_address, programId)
+    // fetch idl
+    let program = null;
+    try {
+      program = new anchor.Program(IDL, provider);
+      setProgram(program);
+    } catch (error) {
+      console.log('[SOLANA: PROGRAM ERROR]', error)
+      if (error.message.includes('{"code": 403, "message":"Access forbidden"')) {
+        toast.error('Something went wrong fetching the IDL for this contract (403). Please try again later or try switching RPC in your wallet.', {
+          bodyClassName: 'text-xs'
+        })
+      } else {
+        toast.error('Could not fetch IDL for this contract. Please try again later or try switching RPC in your wallet.', {
+          bodyClassName: 'text-xs'
+        })
+      }
+    }
 
     // get program owner
-    const { owner } = (await program.account.casinoBank.all())[0].account;
-    setOwner(owner);
+    // let owner = null;
+    // try {
+    //   const { owner } = (await program.account.casinoBank.all())[0].account;
+    //   setOwner(owner);
+    // } catch (error) {
+    //   console.log('[SOLANA: OWNER ERROR]', error)
+    //   if (error.message.includes('{"code": 403, "message":"Access forbidden"')) {
+    //     toast.error('Something went wrong fetching the owner for this contract (403). Please try again later or try switching RPC in your wallet.', {
+    //       bodyClassName: 'text-xs'
+    //     })
+    //   } else {
+    //     toast.error('Could not fetch owner for this contract. Please try again later or try switching RPC in your wallet.', {
+    //       bodyClassName: 'text-xs'
+    //     })
+    //   }
+    // }
   }
 
   if (deposit_contract_address) {

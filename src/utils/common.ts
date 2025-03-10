@@ -37,7 +37,8 @@ export function getExplorerLink(txHash, chainId) {
   const explorers = {
     1: 'https://etherscan.io/tx/', 
     11155111: 'https://sepolia.etherscan.io/tx/', 
-    101: 'https://explorer.solana.com/tx/'
+    101: 'https://explorer.solana.com/tx/',
+    56: 'https://bscscan.com/tx/'
   };
 
   const baseUrl = explorers[chainId];
@@ -54,7 +55,7 @@ export function timeUntil(dateString) {
   
   const date = new Date(dateString);
   const now = new Date();
-  const seconds = Math.floor((date - now) / 1000);
+  const seconds = Math.floor((date.getTime() - now.getTime()) / 1000);
 
   const intervals = [
     { label: "year", seconds: 31536000 },
@@ -80,7 +81,7 @@ export function timeAgo(dateString) {
   
   const date = new Date(dateString);
   const now = new Date();
-  const seconds = Math.floor((now - date) / 1000);
+  const seconds = Math.floor((now.getTime() - date.getTime()) / 1000);
 
   const intervals = [
     { label: "year", seconds: 31536000 },

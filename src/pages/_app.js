@@ -15,7 +15,7 @@ import Layout from '@/components/SimpleLayout'
 import { WalletAdapterNetwork } from '@solana/wallet-adapter-base';
 import { ConnectionProvider, WalletProvider } from '@solana/wallet-adapter-react';
 import { WalletModalProvider } from '@solana/wallet-adapter-react-ui';
-import { clusterApiUrl } from '@solana/web3.js';
+import { clusterApiUrl, Connection } from '@solana/web3.js';
 import { useMemo } from 'react';
 import { SolflareWalletAdapter, PhantomWalletAdapter } from '@solana/wallet-adapter-wallets'
 import { ToastContainer } from 'react-toastify';
@@ -23,7 +23,7 @@ import { ToastContainer } from 'react-toastify';
 
 export default function App({ Component, pageProps }) {
   const network = WalletAdapterNetwork.Mainnet;
-  const endpoint = useMemo(() => clusterApiUrl(network), [network]);
+  const endpoint = 'https://solana-rpc.publicnode.com';
   const wallets = useMemo(
     () => [
       new SolflareWalletAdapter(),

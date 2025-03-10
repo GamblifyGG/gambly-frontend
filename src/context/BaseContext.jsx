@@ -150,7 +150,7 @@ export const BaseProvider = ({ children }) => {
   const { chainId: evmChainId, isDisconnected, address, isConnected: isConnectedEVM, status: statusEVM, isConnecting: isConnectingEVM, connector } = useAccount({ enabled: false });
   const { disconnect: disconnectEVM } = useDisconnect();
   const { connection: connectionSolana } = useConnection()
-  const { disconnect: disconnectSolana, signMessage: signMessageSolana, wallets: solanaWallets, wallet: solanaWallet, connected: isConnectedSolana } = useWallet()
+  const { disconnect: disconnectSolana, signMessage: signMessageSolana, wallet: solanaWallet, connected: isConnectedSolana } = useWallet()
   const router = useRouter();
   const { switchChainAsync } = useSwitchChain()
 
@@ -263,12 +263,25 @@ export const BaseProvider = ({ children }) => {
       })
   
       const json = await r.json()
+      
+      if (!json || json.error) {
+        console.error('[LOGIN ERROR]', json?.error || 'Unknown error')
+        setIsSigningMessage(false)
+        return
+      }
+      
       json.chainId = chainId
       localStorage.chainId = chainId
       saveAuth(chainId, json)
       initUser()
       const networkName = convertNetworkID(chainId)
-
+      
+      // Reset login state
+      setIsSigningMessage(false)
+      setIsLoginWindowOpen(false)
+      setSolanaLoginOpen(false)
+      setEvmLoginOpen(false)
+  
       // Use referral_code once
       if (referral_code) {
         localStorage.removeItem("REF")
@@ -287,7 +300,8 @@ export const BaseProvider = ({ children }) => {
       if (networkName) router.push(`/casinos/${networkName}`)
 
     } catch (err) {
-      console.error(err)
+      console.error('[LOGIN ERROR]', err)
+      setIsSigningMessage(false)
     }
   }
 
@@ -458,10 +472,11 @@ export const BaseProvider = ({ children }) => {
     setCasinoLoading(true)
     setCasino(null)
     setCasinoError(null)
-    const cached = casinosCache.find(x => x.token.network.id === chain_id && x.token.address === token_address)
+    let cached = casinosCache.find(x => x.token.network.id === chain_id && x.token.address === token_address)
 
     if (cached) {
       devLog("Fetched from cache", cached)
+      cached.token.token_2022 = cached.token_2022
       setCasino(cached)
       setToken(cached.token)
       setCasinoError(p => null)
@@ -474,6 +489,7 @@ export const BaseProvider = ({ children }) => {
 
     if (data) {
       setCasino(data)
+      data.token.token_2022 = data.token_2022
       setToken(data?.token)
       setCasinoError(p => null)
       devLog('[Get Casino]', data)
@@ -502,15 +518,27 @@ export const BaseProvider = ({ children }) => {
         .then(({ signature, message }) => {
           loginWithSignature(signature, message, chainId)
         })
+        .catch(err => {
+          console.error('[EVM SIGN ERROR]', err)
+          setIsSigningMessage(false)
+        })
       return
     }
 
     if (auth?.user?.wallet_address !== address) {
-      signOutWithoutDisconnecting() //this only removes the local storage, we still have to manually try to sign the new wallet.
+      signOutWithoutDisconnecting() // Clear auth but keep wallet connected
       signMessageForEVM(chainId)
         .then(({ signature, message }) => {
           loginWithSignature(signature, message, chainId)
         })
+        .catch(err => {
+          console.error('[EVM SIGN ERROR]', err)
+          setIsSigningMessage(false)
+        })
+    } else {
+      // User already authenticated with current wallet
+      setIsLoginWindowOpen(false)
+      setEvmLoginOpen(false)
     }
   }
 
@@ -526,6 +554,7 @@ export const BaseProvider = ({ children }) => {
     const auth = getChainAuth(101)
 
     if (!auth) {
+      setIsSigningMessage(true)
       signMessageForSolana()
       .then(({ message, signature }) => {
           devLog('[SOLANA] Sig:', message, signature)
@@ -534,21 +563,48 @@ export const BaseProvider = ({ children }) => {
       })
       .catch((err) => {
         console.error('[SOLANA] Sig:', err)
+        setIsSigningMessage(false)
       })
       return
     }
 
     if (auth?.user?.wallet_address !== wallet) {
-      signOut()
+      signOutWithoutDisconnecting()
+      setIsSigningMessage(true)
+      signMessageForSolana()
+      .then(({ message, signature }) => {
+          let signatureString = Array.from(signature).map(x => x.toString(16).padStart(2, '0')).join('')
+          loginWithSignature(signatureString, message, 101)
+      })
+      .catch((err) => {
+        console.error('[SOLANA] Sig:', err)
+        setIsSigningMessage(false)
+      })
+    } else {
+      // User already authenticated with current wallet
+      setIsLoginWindowOpen(false)
+      setSolanaLoginOpen(false)
     }
   }
 
   const switchEvmNetwork = async (chainId) => {
+    if (!chainId) {
+      devLog("[SWITCH NETWORK ERROR]", "No chainId provided")
+      return false
+    }
+    
     devLog("[Switch?]", evmChainId, chainId)
-    if (evmChainId === chainId) return
-    devLog("[SWITCH NETWORK]", `Switching from [${evmChainId}] to [${chainId}]...`)
-    const r = await switchChainAsync({ chainId })
-    devLog("[SWITCH NETWORK DONE]", r)
+    if (evmChainId === chainId) return true
+    
+    try {
+      devLog("[SWITCH NETWORK]", `Switching from [${evmChainId}] to [${chainId}]...`)
+      const r = await switchChainAsync({ chainId })
+      devLog("[SWITCH NETWORK DONE]", r)
+      return true
+    } catch (error) {
+      console.error("[SWITCH NETWORK ERROR]", error)
+      return false
+    }
   }
 
   useEffect(() => {
@@ -564,28 +620,39 @@ export const BaseProvider = ({ children }) => {
 
     if (!isConnectedEVM) {
       devLog("[EVM]", "Disconnected!")
-      console.log(removeEvmAuth())
-    }
-
-    if (isConnectedEVM && evmLoginOpen) {
-      if (evmChainId !== network?.id) {
-        devLog("[Switch Network]", `Switch network to ${network?.id}...`)
-        switchChainAsync({ chainId: network?.id })
-        .then(r => {
-          devLog("[Switch Network]", `Switched network to ${network?.id}`)
-        })
-        .catch(er => {
-          console.error("[Switch Network]", er)
-        })
-        .finally(()=> {
-          handleEvmWallet(network?.id)
-        })
-      } else {
-        handleEvmWallet(network?.id)
+      // Only remove EVM auth when explicitly disconnected
+      if (userAuth && isEvm(userAuth.chainId)) {
+        removeEvmAuth()
+        setUserAuth(null)
       }
     }
 
-  }, [isConnectedEVM, evmLoginOpen])
+    if (isConnectedEVM && evmLoginOpen) {
+      // Check if network is defined and has a valid ID before attempting to switch
+      if (network?.id) {
+        if (evmChainId !== network.id) {
+          devLog("[Switch Network]", `Switch network to ${network.id}...`)
+          switchEvmNetwork(network.id)
+            .then(() => {
+              handleEvmWallet(network.id)
+            })
+            .catch(er => {
+              console.error("[Switch Network]", er)
+              setIsSigningMessage(false)
+              setEvmLoginOpen(false)
+            })
+        } else {
+          handleEvmWallet(network.id)
+        }
+      } else {
+        // If network is not defined, use the current chain ID or default to a fallback
+        const chainIdToUse = evmChainId || 1 // Default to Ethereum mainnet if nothing else is available
+        devLog("[No network defined] Using current chain:", chainIdToUse)
+        handleEvmWallet(chainIdToUse)
+      }
+    }
+
+  }, [isConnectedEVM, evmLoginOpen, network?.id])
 
   useEffect(() => {
     devLog('[SOLANA] Connected:', isConnectedSolana)

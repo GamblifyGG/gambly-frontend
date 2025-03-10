@@ -28,8 +28,9 @@ const WithdrawalModal = ({ withdrawal, setShowModalWithdrawal }) => {
         // const byteArray = parse(data.id);
         // const byteString = Buffer.from(byteArray);
         // const transactionId = '0x' + byteString.toString('hex')
-
+        console.log("DATA", data, withdrawal)
         const details = {
+            token_2022: withdrawal?.casino?.token_2022,
             depositContractAddress: withdrawal?.token?.network?.deposit_contract_address,
             transactionId: data.id,
             amount: data.amount.replace('-', ''),
@@ -64,7 +65,7 @@ const WithdrawalModal = ({ withdrawal, setShowModalWithdrawal }) => {
         setWithdrawalRequestSuccess(false)
         setError(null)
         setCanRetry(false)
-
+        console.log("WITHDRAWAL", withdrawal)
         const args = {
             chainId: withdrawal?.token?.network?.id,
             tokenAddress: withdrawal?.token?.address,

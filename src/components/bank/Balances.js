@@ -44,6 +44,7 @@ const Balances = ({ setShowModalWithdrawal }) => {
             limit,
             after: afterIdRef.current
         })
+        console.log("DATA", data)
         setLoading(false)
 
         if (er) {
@@ -51,6 +52,7 @@ const Balances = ({ setShowModalWithdrawal }) => {
         }
 
         if (data) {
+            console.log("DATA", data)
             setTotalPages(Math.max(1, Math.ceil(data.meta.total / limit)))
             if (data.balances.length) idsRef.current[currentPageRef.current] = data.balances.at(-1)?.id
             setBalances(data?.balances)
@@ -117,6 +119,7 @@ const Balances = ({ setShowModalWithdrawal }) => {
                                             </div>
                                             <div className="flex justify-end items-end flex-col gap-1">
                                                 <Button size="sm" variant="secondary-outline" onClick={() => {
+                                                    console.log("WITHDRAWAL MODAL OPENING", x)
                                                     setShowModalWithdrawal(x);
                                                 }
                                                 }>

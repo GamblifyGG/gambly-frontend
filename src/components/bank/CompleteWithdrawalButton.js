@@ -5,6 +5,7 @@ import { Iconify } from "@/components/common"
 import { Button } from "@/components/form"
 
 const CompleteWithdrawalButton = ({
+    token_2022,
     depositContractAddress,
     transactionId, 
     amount, 
@@ -25,6 +26,7 @@ const CompleteWithdrawalButton = ({
         isSuccess: solanaIsSuccess,
         isError: solanaIsError
     } = useSolanaWithdrawal({ 
+        token_2022,
         depositContractAddress,
         transactionId,
         amount,
@@ -51,6 +53,12 @@ const CompleteWithdrawalButton = ({
         message,
         networkID,
     })
+
+    useEffect(() => {
+        // console.log("SOLANA TX DATA", solanaTxData)
+        // console.log("EVM TX DATA", evmTxData)
+        console.log("TOKEN 2022", token_2022)
+    }, [token_2022])
 
     return (<>
         { !solanaIsSuccess && !evmIsSuccess &&
