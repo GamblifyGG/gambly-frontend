@@ -64,6 +64,8 @@ const Transactions = () => {
             after: afterIdRef.current
         })
 
+        console.log("DATA: ", data)
+
         if (data) {
             setTotalPages(Math.max(1, Math.ceil(data.meta.total / limit)))
             const table = toTableData(data.transactions, data.tokens)
@@ -118,8 +120,8 @@ const Transactions = () => {
                                             </div>
 
                           
-                                            <div className={`text-xs uppercase ${x.amount[0] == '-' ? 'text-red' : 'text-green'}`}>
-                                                {x.amount[0] == '-' ? 'Withdrawal' : 'Deposit'}
+                                            <div className={`text-xs uppercase ${x.is_transfer ? 'text-primary' : (x.amount[0] == '-' ? 'text-red' : 'text-green')}`}>
+                                                {x.is_transfer ? 'Transfer' : (x.amount[0] == '-' ? 'Withdrawal' : 'Deposit')}
                                             </div>
                          
 
@@ -140,7 +142,8 @@ const Transactions = () => {
                                                 }</span>
                                             </div>
                                             <div className="flex justify-end gap-2">
-                                                { x.txid ?
+                                                
+                                                { !x.is_transfer && (x.txid ?
                                                 <Button
                                                     size="sm"
                                                     href={getExplorerLink(x.txid, x.token.network.id)}
@@ -149,8 +152,7 @@ const Transactions = () => {
                                                 >View Tx</Button>
                                                 : <>
                                                  <Button size="sm" variant="primary-outline" onClick={() => router.push(`/bank?page=balances`) }>Retry</Button>
-                                                </>
-                                                   
+                                                </>)
                                            
                                             }
 

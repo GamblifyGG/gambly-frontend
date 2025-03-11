@@ -18,7 +18,7 @@ const Transactions = dynamic(() => import('@/components/bank/Transactions'))
 const DepositModal = dynamic(() => import('@/components/bank/DepositModal'))
 const Balances = dynamic(() => import('@/components/bank/Balances'))
 const WithdrawalModal = dynamic(() => import('@/components/bank/WithdrawalModal'))
-
+const TransferModal = dynamic(() => import('@/components/bank/TransferModal'))
 // Custom hook for debouncing
 
 import { BaseContext } from "@/context/BaseContext";
@@ -27,6 +27,7 @@ import { BaseContext } from "@/context/BaseContext";
 const Poker = () => {
     const [showModal, setShowModal] = useState(false)
     const [showModalWithdrawal, setShowModalWithdrawal] = useState(false)
+    const [showModalTransfer, setShowModalTransfer] = useState(false)
     const [showModalBalances, setShowModalBalances] = useState(false)
     const router = useRouter();
     const [socket, setSocket] = useState(null);
@@ -92,7 +93,7 @@ const Poker = () => {
             </Head>
 
             <WithdrawalModal withdrawal={showModalWithdrawal} setShowModalWithdrawal={setShowModalWithdrawal} />
-
+            <TransferModal withdrawal={showModalTransfer} setShowModalTransfer={setShowModalTransfer} />
             {!user && !userLoading &&
                 <div className='flex w-full items-center relative justify-center flex-col h-[calc(100%)] flex-grow'>
                     <div className='flex items-center justify-center flex-col z-50'>
@@ -158,7 +159,7 @@ const Poker = () => {
                     }
 
                     {currentPage === 'Balances' &&
-                        <Balances setShowModalWithdrawal={setShowModalWithdrawal} />
+                        <Balances setShowModalWithdrawal={setShowModalWithdrawal} setShowModalTransfer={setShowModalTransfer} />
                     }
 
                     {currentPage === 'Investments' &&

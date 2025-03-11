@@ -8,7 +8,7 @@ import { BaseContext } from '@/context/BaseContext'
 
 // import Loading from "../Loading";
 
-const Balances = ({ setShowModalWithdrawal }) => {
+const Balances = ({ setShowModalWithdrawal, setShowModalTransfer }) => {
     const { network } = useContext(BaseContext)
 
     const [loading, setLoading] = useState(true);
@@ -22,6 +22,10 @@ const Balances = ({ setShowModalWithdrawal }) => {
     const afterIdRef = useRef(null)
     const idsRef = useRef({})
 
+    const { user, isConnectedEVM, isConnectedSolana, isConnected } = useContext(BaseContext)
+    useEffect(() => {
+        console.log("USER", user, network)
+    }, [user, isConnectedEVM, isConnectedSolana, isConnected])
     const router = useRouter();
 
     const nextPage = () => {
@@ -93,13 +97,14 @@ const Balances = ({ setShowModalWithdrawal }) => {
                                     </div> :
 
                                     balances.map(x => (
+
                                         <div className="grid w-full h-14 items-center justify-center px-4 grid-cols-4  lg:grid-cols-5 odd:bg-dark-700 even:bg-gray" key={x.id}>
                                             <div className='text-sm'>
                                                 <img
                                                     onClick={() => router.push(`/casinos/${x.token.network.name.toLowerCase()}/${x.token.address}`)}
                                                     className="h-10 w-10 hover:opacity-90 cursor-pointer  p-1 rounded-full border border-lightgray object-contain" src={x.token?.logo}
                                                 />
-            
+
                                             </div>
                                             <div onClick={() => {
                                                 // router.push(`/casinos/${convertNetworkID(x.NetworkID)}/${x.TokenAddress}`)
@@ -118,13 +123,35 @@ const Balances = ({ setShowModalWithdrawal }) => {
                                                 {/* {x.FrozenTokenAmount.length > 8 ? Number(x.FrozenTokenAmount).toFixed(8) : Number(x.FrozenTokenAmount)} {x.TokenSymbol} */}
                                             </div>
                                             <div className="flex justify-end items-end flex-col gap-1">
-                                                <Button size="sm" variant="secondary-outline" onClick={() => {
-                                                    console.log("WITHDRAWAL MODAL OPENING", x)
-                                                    setShowModalWithdrawal(x);
+                                                {network.name === 'solana' && x.token.network.name !== 'Solana' &&
+                                                    <Button size="sm" variant="secondary-outline" onClick={() => {
+                                                        console.log("TRANSFER MODAL OPENING", x)
+                                                        setShowModalTransfer(x);
+                                                    }}>
+                                                        Transfer
+                                                    </Button>
                                                 }
-                                                }>
-                                                    Withdraw
-                                                </Button>
+
+
+                                                {network.name === 'solana' && x.token.network.name === 'Solana' &&
+                                                    <Button size="sm" variant="secondary-outline" onClick={() => {
+                                                        console.log("WITHDRAWAL MODAL OPENING", x)
+                                                        setShowModalWithdrawal(x);
+                                                    }
+                                                    }>
+                                                        Withdraw
+                                                    </Button>
+                                                }
+
+                                                {network.name === 'bsc' && x.token.network.name === 'BSC' &&
+                                                    <Button size="sm" variant="secondary-outline" onClick={() => {
+                                                        console.log("WITHDRAWAL MODAL OPENING", x)
+                                                        setShowModalWithdrawal(x);
+                                                    }
+                                                    }>
+                                                        Withdraw
+                                                    </Button>
+                                                }
 
                                             </div>
                                         </div>
@@ -140,7 +167,7 @@ const Balances = ({ setShowModalWithdrawal }) => {
                     disabled={currentPage == 1}
                     onClick={prevPage}
                 ><iconify-icon icon="bx:caret-left"></iconify-icon>previous</Button>
-                { totalPages ? currentPage : '0'} / {totalPages}
+                {totalPages ? currentPage : '0'} / {totalPages}
                 <Button
                     variant="clear"
                     disabled={currentPage == totalPages || !totalPages}

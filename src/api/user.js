@@ -66,6 +66,12 @@ export function requestWithdrawal({ chainId, tokenAddress, amount }) {
   )
 }
 
+export function requestTransfer({ tokenId, amount, recipient }) {
+  return awaiter(api.post(`user/balances/transfer`, {
+    tokenId, amount, recipient
+  }))
+}
+
 export function getUserBets(chainId, tokenAddress, { sort = 'created', order = 'desc', limit = 10, offset = 0 } = {}) {
   return awaiter(
     api.get(`user/bets/${chainId}/${tokenAddress}`, {
