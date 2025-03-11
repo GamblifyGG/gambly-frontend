@@ -23,7 +23,6 @@ export function useSolanaContract(deposit_contract_address = null, tokenState = 
   const { connection } = useConnection();
   const [program, setProgram] = useState(null);
   const [owner, setOwner] = useState(process.env.NEXT_PUBLIC_SOLANA_OWNER);
-  console.log("[SOLANA] OWNER", owner)
   let provider = null;
   // use custom provider
   try {
@@ -32,20 +31,12 @@ export function useSolanaContract(deposit_contract_address = null, tokenState = 
     console.log('[SOLANA: PROVIDER ERROR]', error)
   }
 
-  useEffect(() => {
-    console.log('[SOLANA: PROGRAM SET]', program)
-  }, [program])
-
-  useEffect(() => {
-    console.log('[SOLANA: OWNER SET]', owner)
-  }, [owner])
-
   const fetchProgram = async (contract_address) => {
-    console.log('[SOLANA CON]', provider, connection)
+    // console.log('[SOLANA CON]', provider, connection)
     if (!isValidSolanaAddress(contract_address)) {
-      toast.error('Invalid contract address. Please try again.', {
-        bodyClassName: 'text-xs'
-      })
+      // toast.error('Invalid contract address. Please try again.', {
+      //   bodyClassName: 'text-xs'
+      // })
       return
     }
     

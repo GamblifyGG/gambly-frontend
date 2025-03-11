@@ -1,21 +1,23 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { formatEther } from "viem";
 import MyLock from "./MyLock";
 import { Iconify } from "@/components/common"
 
 const MyLocks = ({ locks, token, loading }) => {
+    
+    const [userLocks, setUserLocks] = useState([])
 
     useEffect(() => {
-        console.log(locks)
+        setUserLocks(locks?.userLocks)
     }, [])
 
     return (
         <div className="h-full relative">
-                            { loading &&
-                    <div className="absolute inset-0 z-10 bg-white/5 flex justify-center items-center">
-                        <div>Refreshing...</div>
-                    </div>
-                }
+            {loading &&
+                <div className="absolute inset-0 z-10 bg-white/5 flex justify-center items-center">
+                    <div>Refreshing...</div>
+                </div>
+            }
             <div className="flex items-center justify-between p-4 border-b border-bordergray">
                 <span>My Locks</span>
                 {/* <div className="flex h-10 text-xs items-center">50,000<img src="/logo-letter.png" className="h-6"></img> tokens (5% of all payouts)</div> */}
@@ -29,8 +31,8 @@ const MyLocks = ({ locks, token, loading }) => {
                     <span className="justify-self-end">Start Date</span>
                     <span className="justify-self-end">End Date</span>
                 </div>
-                <div className="absolute overflow-y-auto h-[calc(100%-100px)] w-full mt-10 ">
-                    {locks?.userLocks?.map((lock, index) => {
+                <div className="z-[99999999] overflow-y-auto h-[calc(100%)] w-full">
+                    {userLocks?.map((lock, index) => {
                         return (
                             <MyLock key={index} token={token} lock={lock} />
                         )
