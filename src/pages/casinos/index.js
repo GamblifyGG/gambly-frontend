@@ -1,13 +1,24 @@
-import { useContext } from 'react'
+import { useContext, useState, useEffect } from 'react'
 import { motion } from 'framer-motion';
 import { getLayout } from '@/components/CasinoLayout'
 import { NetworkBox } from '@/components/common/NetworkBox'
 import { BaseContext } from '@/context/BaseContext'
 import Head from "next/head";
-import { SparklesCore } from '@/components/ui/sparkles'
+import dynamic from 'next/dynamic'
+
+// Import SparklesCore with no SSR
+const SparklesCore = dynamic(
+  () => import('@/components/ui/sparkles').then((mod) => mod.SparklesCore),
+  { ssr: false }
+)
 
 const Casino = () => {
   const { networks } = useContext(BaseContext)
+  const [isMounted, setIsMounted] = useState(false)
+  
+  useEffect(() => {
+    setIsMounted(true)
+  }, [])
 
   return (
     <div className='h-full w-full'>
@@ -16,14 +27,16 @@ const Casino = () => {
         <meta name="description" content="Supported Casino Networks" />
       </Head>
 
-      <div className='h-[calc(100%)] lg:h-[calc(100%)] absolute w-[100%] lg:w-[calc(100%-125px)]'>
-        <SparklesCore 
-          particleColor={'#FFA843'} 
-          particleDensity={10} 
-          id={'casinoSparkles'} 
-          className={'h-full w-full'} 
-          background={'transparent'} 
-        />
+      <div className='h-[calc(100%-200px)] lg:h-[calc(100%)] absolute w-[100%] lg:w-[calc(100%-125px)]'>
+        {isMounted && (
+          <SparklesCore 
+            particleColor={'#FFA843'} 
+            particleDensity={10} 
+            id={'casinoSparkles'} 
+            className={'h-full w-full'} 
+            background={'transparent'} 
+          />
+        )}
       </div>
       <div className="relative z-10 p-4 lg:p-6">
 
