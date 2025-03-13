@@ -4,7 +4,7 @@ import { formatUnits } from 'viem'
 import Link from 'next/link'
 import { Iconify } from "@/components/common"
 import { useEffect } from "react"
-const CasinoCard = ({ token, stats }) => {
+const CasinoCard = ({ token, stats, isLive }) => {
 
 
   useEffect(() => {
@@ -12,7 +12,7 @@ const CasinoCard = ({ token, stats }) => {
   }, [token])
 
   return (
-    <Link href={`/casinos/${token?.network?.name?.toLowerCase()}/${token?.address}`}>
+    <Link href={isLive ? `/casinos/${token?.network?.name?.toLowerCase()}/${token?.address}` : "/ "}>
       <div className="group border border-gray bg-darkgray hover:scale-[1.05] transition-all duration-300 overflow-hidden  grid grid-cols-[40%_auto] from-dark-250 to-dark-350 relative rounded-xl">
         <div className="group-hover:opacity-100 transition-all duration-300 opacity-50 z-0 blur-2xl bottom-[-60px] left-0 absolute  from-primary to-secondary-300 w-[55%] h-full"></div>
 

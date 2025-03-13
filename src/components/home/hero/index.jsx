@@ -7,7 +7,7 @@ import { scaleIn } from "@/animations/headline";
 import HeadlineSection from "./headline";
 import StatsSection from "./stats";
 import mainImage from "@/assets/home-main-image.png"
-export default function HeroSection() {
+export default function HeroSection({ isLive }) {
   const imageRef = useRef(null);
 
   useLayoutEffect(() => {
@@ -20,8 +20,8 @@ export default function HeroSection() {
     <section className="flex justify-center px-6 lg:px-24 p-2 mb-32">
       <div className="w-full max-w-container flex items-center justify-between">
         <div className="flex flex-col">
-          <HeadlineSection />
-          <StatsSection />
+          <HeadlineSection isLive={isLive} />
+          <StatsSection isLive={isLive} />
         </div>
         <div
           ref={imageRef}

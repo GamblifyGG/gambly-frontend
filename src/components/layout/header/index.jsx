@@ -10,7 +10,7 @@ import { useContext, useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
 import { BaseContext } from '@/context/BaseContext'
 
-export default function Header() {
+export default function Header({ isLive }) {
   const headerRef = useRef(null);
 
   useLayoutEffect(() => {
@@ -33,7 +33,7 @@ export default function Header() {
       <div className="w-full max-w-container flex justify-between items-center">
         <Logo />
         {/* <MenuList /> */}
-        <ToolKit />
+        <ToolKit isLive={isLive} />
       </div>
     </header>
   );
@@ -49,13 +49,13 @@ export default function Header() {
 //   );
 // };
 
-const ToolKit = () => {
+const ToolKit = ({ isLive }) => {
   const { toggleFeatureFlag } = useContext(AppContext);
   const { network } = useContext(BaseContext)
 
   return (
     <div className="flex items-center gap-5">
-      <Button href={`casinos`} className="hidden hover:opacity-75 hover:animate-pulse transition-all md:flex">Browse Casinos</Button>
+      <Button href={isLive ? `casinos` : `/ `} className="hidden hover:opacity-75 hover:animate-pulse transition-all md:flex">{isLive ? "Browse Casinos" : "Coming Soon"}</Button>
       <Menu
         onClick={() => toggleFeatureFlag("isOpenMenu")}
         className="flex md:hidden"

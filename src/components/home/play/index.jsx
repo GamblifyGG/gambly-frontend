@@ -6,7 +6,7 @@ import { fadeInUp } from "@/animations/headline";
 import ImageGallery from "./gallery";
 
 
-const PlaySection = () => {
+const PlaySection = ({ isLive }) => {
   const playContentRef = useRef(null);
 
   useLayoutEffect(() => {
@@ -31,7 +31,7 @@ const PlaySection = () => {
             the ultimate token for enthusiasts seeking a superior gaming
             experience.
           </p>
-          <Button href="/casinos/ethereum">Play Now</Button>
+          <Button href={isLive ? "/casinos" : "/ "}>Play Now</Button>
         </div>
       </div>
     </section>

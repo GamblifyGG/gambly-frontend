@@ -73,7 +73,7 @@ export const faqData = [
   },
   {
     question: "What blockchains are supported?", 
-    answer: "Currently, Gambly.io supports Ethereum (ERC20 tokens) and Solana (SPL tokens) with plans to expand to even more chains in the future.",
+    answer: "Currently, Gambly.io supports BSC20 Tokens and Solana (SPL tokens) with plans to expand to even more chains in the future.",
   },
   {
     question: "How do I leverage Gambly.io?",

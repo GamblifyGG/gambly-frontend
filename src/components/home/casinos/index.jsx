@@ -6,7 +6,7 @@ import { fadeInUp } from "@/animations/headline";
 import { getCasinos } from '@/api'
 
 
-export default function CasinosSection() {
+export default function CasinosSection({ isLive }) {
 
   const testRef = useRef(null);
   const [casinos, setCasinos] = useState([])
@@ -48,7 +48,7 @@ export default function CasinosSection() {
         </div>
         <div className="grid grid-cols-1 w-full gap-5 lg:gap-10 md:gap-5 lg:grid-cols-3 sm:grid-cols-2 ">
           {casinos.map((casino, index) => (
-            <CasinoCard key={index} {...casino} />
+            <CasinoCard isLive={isLive} key={index} {...casino} />
           ))}
         </div>
       </div>

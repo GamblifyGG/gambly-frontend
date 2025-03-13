@@ -4,7 +4,7 @@ import { fadeInUp } from "@/animations/headline";
 import Button from "@/components/basic/button";
 import { useLayoutEffect, useRef } from "react";
 
-const HeadlineSection = () => {
+const HeadlineSection = ({ isLive }) => {
   const headingRef = useRef(null);
   const contentRef = useRef(null);
   const buttonRef = useRef(null);
@@ -45,8 +45,8 @@ const HeadlineSection = () => {
         casino tailored for your community and embark on your gaming journey
         today.
       </p>
-      <Button href="/casinos" buttonRef={buttonRef} className="z-10 hover:animate-pulse transition-all">
-        Browse Casinos
+      <Button href={isLive ? "/casinos" : "/ "} buttonRef={buttonRef} className="z-10 hover:animate-pulse transition-all">
+        {isLive ? "Browse Casinos" : "Coming Soon"}
       </Button>
       <div className="absolute right-10 w-full max-w-[250px] h-full max-h-[250px] blur-2xl opacity-30 rounded-full z-0 bg-primary" />
     </div>

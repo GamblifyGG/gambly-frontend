@@ -3,13 +3,13 @@ import Marquee from "react-fast-marquee";
 import { BaseContext } from "@/context/BaseContext";
 import { useContext, useEffect } from "react";
 import Link from "next/link";
-const CoinImage = ({ src, alt, casinoUrl }) => (
-  <Link href={casinoUrl}>
+const CoinImage = ({ src, alt, casinoUrl, isLive }) => (
+  <Link href={isLive ? casinoUrl : "/ "}>
     <Image src={src} width={64} height={64} alt={alt} className="rounded-full" />
   </Link>
 );
 
-const MarqueeSection = () => {
+const MarqueeSection = ({ isLive }) => {
   const { tokensCache, networkTokens } = useContext(BaseContext);
 
   useEffect(() => {
@@ -24,7 +24,7 @@ const MarqueeSection = () => {
       return '/casinos/solana'
     }
 
-    if(token.network.name === 'Sepolia' || token.network.name === 'sepolia') {
+    if (token.network.name === 'Sepolia' || token.network.name === 'sepolia') {
       return '/casinos/sepolia'
     }
 
@@ -40,6 +40,7 @@ const MarqueeSection = () => {
               tokensCache.map((token) =>
                 token.logo ? (
                   <CoinImage
+                    isLive={isLive}
                     casinoUrl={getCasinoUrl(token) + "/" + token.address}
                     key={token.id}
                     src={token.logo}

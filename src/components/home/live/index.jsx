@@ -6,7 +6,7 @@ import { scaleIn } from "@/animations/headline";
 import LiveBettingInfo from "./information";
 import pokerPreview from "@/assets/poker-preview.png"
 
-const LiveSection = () => {
+const LiveSection = ({ isLive }) => {
   const title = "Live Betting Casinos";
   const description =
     "Challenge your friends or other players in the game of poker, coin flip and rock, paper scissors using top tokens and wins amazing bets.";
@@ -23,7 +23,7 @@ const LiveSection = () => {
   return (
     <section className="flex justify-center p-2 mb-32 px-6 lg:px-24">
       <div className="w-full max-w-container flex items-center justify-between flex-col md:flex-row">
-        <LiveBettingInfo title={title} description={description} />
+        <LiveBettingInfo isLive={isLive} title={title} description={description} />
         <div
           ref={imageRef}
           className="max-w-[740px] min-w-[320px] w-full h-auto"
