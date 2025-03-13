@@ -28,7 +28,7 @@ const LiveBettingInfo = ({
       <p className="z-10 text-white mb-5 text-center md:text-start">
         {description}
       </p>
-      <Button className="z-10" href={isLive ? "/casinos" : "/ "}>Join Now!</Button>
+      <Button className="z-10" href={isLive ? "/casinos" : "/ "}>{isLive ? "Join Now!" : "Coming Soon"}</Button>
       <div className="absolute right-10 w-full max-w-[250px] h-full max-h-[250px] blur-2xl opacity-30 rounded-full z-0 bg-primary" />
     </div>
   );

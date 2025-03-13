@@ -31,7 +31,7 @@ const PlaySection = ({ isLive }) => {
             the ultimate token for enthusiasts seeking a superior gaming
             experience.
           </p>
-          <Button href={isLive ? "/casinos" : "/ "}>Play Now</Button>
+          <Button href={isLive ? "/casinos" : "/ "}>{isLive ? "Play Now" : "Coming Soon"}</Button>
         </div>
       </div>
     </section>

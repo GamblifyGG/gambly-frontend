@@ -37,7 +37,7 @@ const SocialSection = () => {
         <a href="https://discord.gg/xvVcxM8F4p">
           <Iconify icon="prime:discord" className="inline-flex hover:text-primary text-[30px]" />
         </a>
-        <a href="https://t.me/gambly_io">
+        <a href="https://t.me/gambly">
           <Iconify icon="prime:telegram" className="inline-flex hover:text-primary text-[30px]" />
         </a>
       </div>
