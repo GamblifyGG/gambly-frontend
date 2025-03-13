@@ -31,13 +31,13 @@ const SocialSection = () => {
     <section className="flex flex-col gap-5 ">
       <Logo />
       <div className="flex items-center gap-3">
-        <a href="#twitter">
+        <a href="https://x.com/gambly_io">
           <Iconify icon="prime:twitter" className="inline-flex hover:text-primary text-[18px]" />
         </a>
-        <a href="#discord">
+        <a href="https://discord.gg/xvVcxM8F4p">
           <Iconify icon="prime:discord" className="inline-flex hover:text-primary text-[30px]" />
         </a>
-        <a href="#telegram">
+        <a href="https://t.me/gambly_io">
           <Iconify icon="prime:telegram" className="inline-flex hover:text-primary text-[30px]" />
         </a>
       </div>
@@ -76,7 +76,7 @@ const ProductLinks = () => {
     <section className="flex flex-col">
       <h4 className="font-semibold mb-3 text-white">Networks</h4>
       <ul className="text-placeHolder">
-        <li><Link className="hover:text-primary" href="/casinos/ethereum">Ethereum</Link></li>
+        {/* <li><Link className="hover:text-primary" href="/casinos/ethereum">Ethereum</Link></li> */}
         <li><Link className="hover:text-primary" href="/casinos/bsc">Binance Smart Chain</Link></li>
         <li><Link className="hover:text-primary" href="/casinos/solana">Solana</Link></li>
       </ul>
